@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-		<title>Harmoni - Home 2</title>
+		<title>Surprise Machi</title>
 		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
 		<!-- fraimwork - css include -->
@@ -82,7 +82,7 @@
 						<!-- register-login-group - start -->
 						<div class="col-lg-6">
 							<div class="register-login-group">
-								<ul>
+								<!--<ul>
 									<li>
 										<a href="#register-modal" class="register-modal-btn">
 											<i class="fas fa-user"></i>
@@ -90,8 +90,6 @@
 										</a>
 										<div id="register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %});">
 											<div class="overlay-black clearfix">
-
-												<!-- leftside-content - start -->
 												<div class="leftside-content">
 													<div class="site-logo-wrapper mb-80">
 														<a href="#!" class="logo">
@@ -107,10 +105,6 @@
 													<div class="copyright-text">
 														<p class="m-0">©2018 <a href="#!" class="yellow-color">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by jThemes Studio </p>
 													</div>
-												</div>
-												<!-- leftside-content - end -->
-
-												<!-- rightside-content - start -->
 												<div class="rightside-content text-center">
 
 													<div class="mb-30">
@@ -151,7 +145,6 @@
 													</div>
 
 												</div>
-												<!-- rightside-content - end -->
 
 												<a class="popup-modal-dismiss" href="#!">
 													<i class="fas fa-times"></i>
@@ -167,8 +160,6 @@
 										</a>
 										<div id="login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 											<div class="overlay-black clearfix">
-
-												<!-- leftside-content - start -->
 												<div class="leftside-content">
 													<div class="site-logo-wrapper mb-80">
 														<a href="#!" class="logo">
@@ -185,9 +176,6 @@
 														<p class="m-0">©2018 <a href="#!" class="yellow-color">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by jThemes Studio </p>
 													</div>
 												</div>
-												<!-- leftside-content - end -->
-
-												<!-- rightside-content - start -->
 												<div class="rightside-content text-center">
 
 													<div class="mb-30">
@@ -228,7 +216,6 @@
 													</div>
 
 												</div>
-												<!-- rightside-content - end -->
 
 												<a class="popup-modal-dismiss" href="#!">
 													<i class="fas fa-times"></i>
@@ -237,7 +224,7 @@
 											</div>
 										</div>
 									</li>
-								</ul>
+								</ul>-->
 							</div>
 						</div>
 						<!-- register-login-group - end -->
@@ -270,8 +257,39 @@
 												<li class="menu-item-has-children">
 													<a href="{% url 'gallery' %}">Gallery</a>
 												</li>
-												<li class="menu-item-has-children">
-													<a href="#!">Surprises</a>
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
+													<ul class="dropdown-menu multi-column columns-3">
+														<div class="card-body row" style="width:650px;line-height:2;">
+															<div class="col-lg-4">
+																<ul class="multi-column-dropdown">
+																	<li><a href="#">12'o Clock Surprise</a></li>
+																	<li><a href="#">Car Surprise</a></li>
+																	<li><a href="#">On Road Surprise</a></li>
+																	<li><a href="#">Mascot Doll Surprise</a></li>
+																	<li><a href="#">Flash Mob</a></li>
+																</ul>
+															</div>
+															<div class="col-lg-4">
+																<ul class="multi-column-dropdown">
+																	<li><a href="#">Hire a Guitarist</a></li>
+																	<li><a href="#">Mottamadi Surprise</a></li>
+																	<li><a href="#">Room Decor</a></li>
+																	<li><a href="#">Van/Bus Surprise</a></li>
+																	<li><a href="#">Yacht Surprise</a></li>
+																</ul>
+															</div>
+															<div class="col-lg-4">
+																<ul class="multi-column-dropdown">
+																	<li><a href="#">HAnd Craft Gifts</a></li>
+																	<li><a href="#">Gift for Her</a></li>
+																	<li><a href="#">Gift for Him</a></li>
+																	<li><a href="#">Luxury Surprise</a></li>
+																	<li><a href="#">Big Box Surprise</a></li>
+																</ul>
+															</div>
+														</div>
+													</ul>
 												</li>
 												<li class="menu-item-has-children">
 													<a href="#!">Franchisee</a>
@@ -284,7 +302,7 @@
 									</div>
 									<div class="col-lg-2">
 										<div class="user-search-btn-group ul-li clearfix">
-											<ul>
+											<!--<ul>
 												<li>
 													<a href="#!">
 														<i class="fas fa-user"></i>
@@ -307,7 +325,7 @@
 														</div>
 													</div>
 												</li>
-											</ul>
+											</ul>-->
 										</div>
 									</div>
 								</div>
@@ -319,10 +337,6 @@
 		</header>
 		<!-- header-section - end
 		================================================== -->
-
-
-
-
 
 		<!-- altranative-header - start
 		================================================== -->
@@ -363,96 +377,37 @@
 
 					<!-- main-pages-links - start -->
 					<div class="menu-link-list main-pages-links">
-						<h2 class="menu-title">all home pages</h2>
 						<ul>
 							<li>
-								<a href="index-1.html">
+								<a href="{% url 'home' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									Home V.1
-								</a>
-							</li>
-							<li>
-								<a href="index-2.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home V.2
-								</a>
-							</li>
-							<li>
-								<a href="index-3.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home v.3
-								</a>
-							</li>
-							<li>
-								<a href="index-4.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home v.4
+									Home
 								</a>
 							</li>
 						</ul>
 					</div>
-					<!-- main-pages-links - end -->
-
-					<!-- other-pages-links - start -->
 					<div class="menu-link-list other-pages-links">
-						<h2 class="menu-title">all single pages</h2>
 						<ul>
-							<li>
-								<a href="about.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									About Us
-								</a>
-							</li>
-							<li>
-								<a href="service.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									our Services
-								</a>
-							</li>
-							<li>
-								<a href="event-1.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event list
-								</a>
-							</li>
-							<li>
-								<a href="event-2.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event grid
-								</a>
-							</li>
-							<li>
-								<a href="event-1-without-sidebar.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									list without sidebar
-								</a>
-							</li>
-							<li>
-								<a href="event-2-without-sidebar.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									grid without sidebar
-								</a>
-							</li>
-							<li>
-								<a href="blog.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Latest blogs
-								</a>
-							</li>
 							<li class="active">
-								<a href="gallery.html">
+								<a href="{% url 'gallery' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									our gallery
 								</a>
 							</li>
 							<li>
-								<a href="speaker.html">
+								<a href="#">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									event speakers
+									Surprises
 								</a>
 							</li>
 							<li>
-								<a href="contact.html">
+								<a href="#">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Franchisee
+								</a>
+							</li>
+							<li>
+								<a href="{% url 'contact' %}"> 
 									<span class="icon"><i class="fas fa-home"></i></span>
 									contact us
 								</a>
@@ -461,56 +416,15 @@
 					</div>
 					<!-- other-pages-links - end -->
 
-					<!-- inner-pages-links - start -->
-					<div class="menu-link-list inner-pages-links">
-						<h2 class="menu-title">all inner pages</h2>
-						<ul>
-							<li>
-								<a href="booking.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event booking
-								</a>
-							</li>
-							<li>
-								<a href="event-details.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event details
-								</a>
-							</li>
-							<li>
-								<a href='blog-details.html'>
-									<span class="icon"><i class="fas fa-home"></i></span>
-									blog details
-								</a>
-							</li>
-							<li>
-								<a href="faq.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Frequently Ask Qusetion
-								</a>
-							</li>
-							<li>
-								<a href="404-error.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									404 error
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!-- inner-pages-links - end -->
-
 					<!-- login-btn-group - start -->
-					<div class="login-btn-group">
+					<!--<div class="login-btn-group">
 						<ul>
-
 							<li>
 								<a href="#alt-register-modal" class="register-modal-btn">
 									Register
 								</a>
 								<div id="alt-register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 									<div class="overlay-black clearfix">
-
-										<!-- leftside-content - start -->
 										<div class="leftside-content">
 											<div class="site-logo-wrapper mb-80">
 												<a href="#!" class="logo">
@@ -527,9 +441,6 @@
 												<p class="m-0">©2018 <a href="#!" class="yellow-color">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by jThemes Studio </p>
 											</div>
 										</div>
-										<!-- leftside-content - end -->
-
-										<!-- rightside-content - start -->
 										<div class="rightside-content text-center">
 
 											<div class="mb-30">
@@ -570,7 +481,6 @@
 											</div>
 
 										</div>
-										<!-- rightside-content - end -->
 
 										<a class="popup-modal-dismiss" href="#!">
 											<i class="fas fa-times"></i>
@@ -585,8 +495,6 @@
 								</a>
 								<div id="alt-login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 									<div class="overlay-black clearfix">
-
-										<!-- leftside-content - start -->
 										<div class="leftside-content">
 											<div class="site-logo-wrapper mb-80">
 												<a href="#!" class="logo">
@@ -603,9 +511,6 @@
 												<p class="m-0">©2018 <a href="#!" class="yellow-color">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by jThemes Studio </p>
 											</div>
 										</div>
-										<!-- leftside-content - end -->
-
-										<!-- rightside-content - start -->
 										<div class="rightside-content text-center">
 
 											<div class="mb-30">
@@ -646,7 +551,6 @@
 											</div>
 
 										</div>
-										<!-- rightside-content - end -->
 
 										<a class="popup-modal-dismiss" href="#!">
 											<i class="fas fa-times"></i>
@@ -657,7 +561,7 @@
 							</li>
 							
 						</ul>
-					</div>
+					</div>-->
 					<!-- login-btn-group - end -->
 
 					<!-- social-links - start -->
@@ -690,7 +594,7 @@
 								<a href="#!"><i class="fab fa-instagram"></i></a>
 							</li>
 						</ul>
-						<a href="contact.html" class="contact-btn">contact us</a>
+						<!--<a href="contact.html" class="contact-btn">contact us</a>-->
 					</div>
 					<!-- social-links - end -->
 

@@ -13,6 +13,17 @@ def about(request):
 def contact(request):
     return render(request,'contact.html')
 
+def details(request):
+    return render(request,'details.html')
+
+def event(request):
+    return render(request,'event.html')
+
+def error(request):
+    return render(request,'404-error.html')
+
+def booking(request):
+    return render(request,'booking.html')
 '''
 class ContactView(View):
     template_name='contact.html'

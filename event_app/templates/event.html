@@ -1,66 +1,39 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-		<title>Surprise Machi</title>
-		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
-
-		<!-- fraimwork - css include -->
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
-
-		<!-- icon css include -->
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/flaticon.css' %}">
-		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-		<!-- carousel css include -->
+		<title>SurpriceMachi</title>
+		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static ' assets/css/flaticon.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick-theme.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %} ">
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.carousel.min.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl.theme.default.min.css' %} ">
-
-		<!-- others css include -->
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %}">
-		<link rel="stylesheet" type="text/css" href=" {% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/calendar.css' %}">
-
-		<!-- color switcher css include -->
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/style-switcher.css' %}">
-		<link id="color_theme" rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/default.css' %}">
-
-		<!-- custom css include -->
-		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/calendar.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/style-switcher.css' %} ">
+		<link id="color_theme" rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/default.css' %} ">
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %} ">
 	</head>
 	<body class="default-header-p">
-
-		<!-- backtotop - start -->
 		<div id="thetop" class="thetop"></div>
 		<div class='backtotop'>
 			<a href="#thetop" class='scroll'>
 				<i class="fas fa-angle-double-up"></i>
 			</a>
 		</div>
-		<!-- backtotop - end -->
-
-		<!-- preloader - start
-		<div id="preloader"></div>-->
-		<!-- preloader - end -->
-
-		<!-- header-section - start
-		================================================== -->
+		<div id="preloader"></div>
 		<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
-
-			<!-- header-top - start -->
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
-
-						<!-- basic-contact - start -->
 						<div class="col-lg-6">
 							<div class="basic-contact">
 								<ul>
@@ -79,12 +52,9 @@
 								</ul>
 							</div>
 						</div>
-						<!-- basic-contact - end -->
-
-						<!-- register-login-group - start -->
 						<div class="col-lg-6">
-							<div class="register-login-group">
-								<!--<ul>
+							<!--<div class="register-login-group">
+								<ul>
 									<li>
 										<a href="#register-modal" class="register-modal-btn">
 											<i class="fas fa-user"></i>
@@ -92,11 +62,10 @@
 										</a>
 										<div id="register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 											<div class="overlay-black clearfix">
-
 												<div class="leftside-content">
 													<div class="site-logo-wrapper mb-80">
 														<a href="#!" class="logo">
-															<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
+															<img src="{% static 'assets/images/2.site-logo.png' %}" alt="logo_not_found">
 														</a>
 													</div>
 													<div class="register-login-link mb-80">
@@ -134,7 +103,7 @@
 																<input type="checkbox" id="imnotarobot">
 																<label for="imnotarobot">I'm not a robot</label>
 																<span class="verification-image">
-																	<img src="{% static 'assets/images/iamnotrobot.png' %} " alt="Image_not_found">
+																	<img src="{% static 'assets/images/iamnotrobot.png' %}" alt="Image_not_found">
 																</span>
 															</div>
 															<button type="submit" class="login-btn">login now</button>
@@ -149,7 +118,6 @@
 													</div>
 
 												</div>
-
 												<a class="popup-modal-dismiss" href="#!">
 													<i class="fas fa-times"></i>
 												</a>
@@ -164,11 +132,10 @@
 										</a>
 										<div id="login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 											<div class="overlay-black clearfix">
-
 												<div class="leftside-content">
 													<div class="site-logo-wrapper mb-80">
 														<a href="#!" class="logo">
-															<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
+															<img src="{% static 'assets/images/2.site-logo.png' %}" alt="logo_not_found">
 														</a>
 													</div>
 													<div class="register-login-link mb-80">
@@ -219,9 +186,7 @@
 														</p>
 														<p class="m-0">** At least one telephone number is required.</p>
 													</div>
-
 												</div>
-
 												<a class="popup-modal-dismiss" href="#!">
 													<i class="fas fa-times"></i>
 												</a>
@@ -229,22 +194,15 @@
 											</div>
 										</div>
 									</li>
-								</ul>-->
-							</div>
+								</ul>
+							</div>-->
 						</div>
-						<!-- register-login-group - end -->
-						
 					</div>
 				</div>
 			</div>
-			<!-- header-top - end -->
-
-			<!-- header-bottom - start -->
 			<div class="header-bottom">
 				<div class="container">
 					<div class="row">
-
-						<!-- site-logo-wrapper - start -->
 						<div class="col-lg-3">
 							<div class="site-logo-wrapper">
 								<a href="index-1.html" class="logo">
@@ -252,21 +210,16 @@
 								</a>
 							</div>
 						</div>
-						<!-- site-logo-wrapper - end -->
-
-						<!-- mainmenu-wrapper - start -->
 						<div class="col-lg-9">
 							<div class="mainmenu-wrapper">
 								<div class="row">
-
-									<!-- menu-item-list - start -->
 									<div class="col-lg-10">
 										<div class="menu-item-list ul-li clearfix">
 											<ul>
 												<li class="menu-item-has-children">
 													<a href="{% url 'home' %}">home</a>
 												</li>
-												<li class="menu-item-has-children">
+												<li>
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
 												<li class="dropdown">
@@ -312,12 +265,9 @@
 											</ul>
 										</div>
 									</div>
-									<!-- menu-item-list - end -->
-
-									<!-- menu-item-list - start -->
 									<div class="col-lg-2">
-										<div class="user-search-btn-group ul-li clearfix">
-											<!--<ul>
+										<!--<div class="user-search-btn-group ul-li clearfix">
+											<ul>
 												<li>
 													<a href="#!">
 														<i class="fas fa-user"></i>
@@ -340,31 +290,16 @@
 														</div>
 													</div>
 												</li>
-											</ul>-->
-										</div>
+											</ul>
+										</div>-->
 									</div>
-									<!-- menu-item-list - end -->
-
 								</div>
 							</div>
 						</div>
-						<!-- mainmenu-wrapper - end -->
-
 					</div>
 				</div>
 			</div>
-			<!-- header-bottom - end -->
-
 		</header>
-		<!-- header-section - end
-		================================================== -->
-
-
-
-
-
-		<!-- altranative-header - start
-		================================================== -->
 		<div class="header-altranative">
 			<div class="container">
 				<div class="logo-area float-left">
@@ -377,8 +312,6 @@
 					<i class="fas fa-bars"></i>
 				</button>
 			</div>
-
-			<!-- sidebar menu - start -->
 			<div class="sidebar-menu-wrapper">
 				<div id="sidebar" class="sidebar">
 					<span id="sidebar-dismiss" class="sidebar-dismiss">
@@ -390,19 +323,13 @@
 							<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
 						</a>
 					</div>
-
-					<!-- sidebar-form - start -->
 					<div class="sidebar-form">
 						<form action="#">
 							<input id="altmenu-sidebar-search" type="search" placeholder="Search">
 							<label for="altmenu-sidebar-search"><i class="fas fa-search"></i></label>
 						</form>
 					</div>
-					<!-- sidebar-form - end -->
-
-					<!-- main-pages-links - start -->
 					<div class="menu-link-list main-pages-links">
-						<h2 class="menu-title">all home pages</h2>
 						<ul>
 							<li>
 								<a href="index-1.html">
@@ -412,50 +339,78 @@
 							</li>
 						</ul>
 					</div>
-					<!-- main-pages-links - end -->
-
-					<!-- other-pages-links - start -->
 					<div class="menu-link-list other-pages-links">
+						<h2 class="menu-title">all single pages</h2>
 						<ul>
 							<li>
-								<a href="{% url 'gallery' %}">
+								<a href="gallery.html">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									Our Gallery
+									our gallery
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="contact.html">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									Surprises
+									Franchise
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="contact.html">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									Franchisee
+									Surprise
 								</a>
 							</li>
 							<li>
-								<a href="{% url 'contact' %}">
+								<a href="contact.html">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									contact us
 								</a>
 							</li>
 						</ul>
 					</div>
-					<!-- other-pages-links - end -->
-
-					<!-- login-btn-group - start -->
+					<!--<div class="menu-link-list inner-pages-links">
+						<h2 class="menu-title">all inner pages</h2>
+						<ul>
+							<li>
+								<a href="booking.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									event booking
+								</a>
+							</li>
+							<li>
+								<a href="event-details.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									event details
+								</a>
+							</li>
+							<li>
+								<a href='blog-details.html'>
+									<span class="icon"><i class="fas fa-home"></i></span>
+									blog details
+								</a>
+							</li>
+							<li>
+								<a href="faq.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Frequently Ask Qusetion
+								</a>
+							</li>
+							<li>
+								<a href="404-error.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									404 error
+								</a>
+							</li>
+						</ul>
+					</div>-->
 					<!--<div class="login-btn-group">
 						<ul>
-
 							<li>
 								<a href="#alt-register-modal" class="register-modal-btn">
 									Register
 								</a>
 								<div id="alt-register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %} );">
 									<div class="overlay-black clearfix">
-
 										<div class="leftside-content">
 											<div class="site-logo-wrapper mb-80">
 												<a href="#!" class="logo">
@@ -473,12 +428,10 @@
 											</div>
 										</div>
 										<div class="rightside-content text-center">
-
 											<div class="mb-30">
 												<h2 class="form-title title-large white-color">Account <strong>Register</strong></h2>
 												<span class="form-subtitle white-color">Have an account? <strong>LOGIN NOW</strong></span>
 											</div>
-
 											<div class="login-form text-center mb-50">
 												<form action="#!">
 													<div class="form-item">
@@ -503,20 +456,16 @@
 													<button type="submit" class="login-btn">login now</button>
 												</form>
 											</div>
-
 											<div class="bottom-text white-color">
 												<p class="m-0">
 													* Denotes mandatory field.
 												</p>
 												<p class="m-0">** At least one telephone number is required.</p>
 											</div>
-
 										</div>
-
 										<a class="popup-modal-dismiss" href="#!">
 											<i class="fas fa-times"></i>
 										</a>
-
 									</div>
 								</div>
 							</li>
@@ -524,13 +473,12 @@
 								<a href="#alt-login-modal" class="login-modal-btn">
 									Login
 								</a>
-								<div id="alt-login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url(assets/images/login-modal-bg.jpg);">
+								<div id="alt-login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %});">
 									<div class="overlay-black clearfix">
-
 										<div class="leftside-content">
 											<div class="site-logo-wrapper mb-80">
 												<a href="#!" class="logo">
-													<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
+													<img src="{% static 'assets/images/2.site-logo.png' %}" alt="logo_not_found">
 												</a>
 											</div>
 											<div class="register-login-link mb-80">
@@ -544,12 +492,10 @@
 											</div>
 										</div>
 										<div class="rightside-content text-center">
-
 											<div class="mb-30">
 												<h2 class="form-title title-large white-color">Account <strong>Login</strong></h2>
 												<span class="form-subtitle white-color">Login to our website, or <strong>REGISTER</strong></span>
 											</div>
-
 											<div class="fb-login-btn mb-30">
 												<a href="#!">
 													<span class="icon">
@@ -558,11 +504,9 @@
 													login with facebook
 												</a>
 											</div>
-
 											<div class="or-text mb-30">
 												<span>or sign in</span>
 											</div>
-
 											<div class="login-form text-center mb-50">
 												<form action="#!">
 													<div class="form-item">
@@ -574,29 +518,21 @@
 													<button type="submit" class="login-btn">login now</button>
 												</form>
 											</div>
-
 											<div class="bottom-text white-color">
 												<p class="m-0">
 													* Denotes mandatory field.
 												</p>
 												<p class="m-0">** At least one telephone number is required.</p>
 											</div>
-
 										</div>
-
 										<a class="popup-modal-dismiss" href="#!">
 											<i class="fas fa-times"></i>
 										</a>
-
 									</div>
 								</div>
 							</li>
-							
 						</ul>
 					</div>-->
-					<!-- login-btn-group - end -->
-
-					<!-- social-links - start -->
 					<div class="social-links">
 						<h2 class="menu-title">get in touch</h2>
 						<div class="mb-15">
@@ -628,200 +564,319 @@
 						</ul>
 						<a href="contact.html" class="contact-btn">contact us</a>
 					</div>
-					<!-- social-links - end -->
-
 					<div class="overlay"></div>
 				</div>
 			</div>
-			<!-- sidebar menu - end -->
 		</div>
-		<!-- altranative-header - end
-		================================================== -->
-
-
-
-
-
-		<!-- breadcrumb-section - start
-		================================================== -->
 		<section id="breadcrumb-section" class="breadcrumb-section clearfix">
 			<div class="jarallax" style="background-image: url({% static 'assets/images/breadcrumb/0.breadcrumb-bg.jpg' %});">
 				<div class="overlay-black">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-6 col-md-12 col-sm-12">
-
-								<!-- breadcrumb-title - start -->
 								<div class="breadcrumb-title text-center mb-50">
-									<span class="sub-title">contact us now</span>
-									<h2 class="big-title">keep <strong>in touch</strong></h2>
+									<span class="sub-title">SurpriceMachi events</span>
+									<h2 class="big-title">Surprise <strong>event</strong></h2>
 								</div>
-								<!-- breadcrumb-title - end -->
-
-								<!-- breadcrumb-list - start -->
 								<div class="breadcrumb-list">
 									<ul>
-										<li class="breadcrumb-item"><a href="{% url 'home' %}" class="breadcrumb-link">Home</a></li>
-										<li class="breadcrumb-item active" aria-current="page">contact us</li>
+										<li class="breadcrumb-item"><a href="index-1.html" class="breadcrumb-link">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">events</li>
 									</ul>
 								</div>
-								<!-- breadcrumb-list - end -->
-
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- breadcrumb-section - end
-		================================================== -->
-
-		<!-- contact-section - start
-		================================================== -->
-		<section id="contact-section" class="contact-section sec-ptb-100 clearfix">
+		<section id="event-search-section" class="event-search-section clearfix" style="background-image: url({% static 'assets/images/special-offer-bg.png' %});">
 			<div class="container">
-
-				<!-- section-title - start -->
-				<div class="section-title mb-50">
-					<small class="sub-title">contact us</small>
-					<h2 class="big-title">Keep in touch <strong>with Surprise machi</strong></h2>
-				</div>
-				<!-- section-title - end -->
-
-				<!-- contact-form - start -->
-				<div class="contact-form form-wrapper text-center">
-					<form action="https://jthemes.net/themes/html/harmony-event/contact.php" method="post">
-						<div class="row">
-
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="form-item">
-									<input type="text" placeholder="Your Name" required>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="form-item">
-									<input type="email" placeholder="Email Address" required>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="form-item">
-									<input type="text" placeholder="Your Country" required>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-12">
-								<div class="form-item">
-									<input type="tel" placeholder="Phone Number" required>
-								</div>
-							</div>
-
-							<div class="col-lg-12 col-md-12 col-sm-12">
-								<textarea placeholder="Your Message" required></textarea>
-								<button type="submit" class="custom-btn">submit</button>
-							</div>
-							
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="section-title">
+							<small class="sub-title">Find best event on Harmoni</small>
+							<h2 class="big-title">event <strong>Search</strong></h2>
 						</div>
-					</form>
-				</div>
-				<!-- contact-form - end -->
+					</div>
+					<div class="col-lg-8 col-md-12 col-sm-12">
+						<div class="search-form form-wrapper">
+							<form action="#!">
 
+								<ul>
+									<li>
+										<span class="title">event keyword</span>
+										<div class="form-item">
+											<input type="search" placeholder="Event name,location,etc">
+										</div>
+									</li>
+									<li>
+										<span class="title">event category</span>
+										<select id="event-category-select">
+											<option selected="">Conference</option>
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+											<option value="3">Option 3</option>
+										</select>
+									</li>
+									<li>
+										<button type="submit" class="submit-btn">search event now</button>
+									</li>
+								</ul>
+								
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<!-- contact-section - end
-		================================================== -->
+		<section id="event-section" class="event-section bg-gray-light sec-ptb-100 clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12 col-sm-12">
+						<div class="sidebar-section">
+							<div title="Add to Calendar" class="addeventatc">
+								Add to Calendar
+								<span class="start">06/18/2015 09:00 AM</span>
+								<span class="end">06/18/2015 11:00 AM</span>
+								<span class="timezone">Europe/Paris</span>
+								<span class="title">Summary of the event</span>
+								<span class="description">Description of the event</span>
+								<span class="location">Location of the event</span>
+								<span class="organizer">Organizer</span>
+								<span class="organizer_email">Organizer e-mail</span>
+								<span class="all_day_event">false</span>
+								<span class="date_format">MM/DD/YYYY</span>
+							</div>
+							<div class="map-wrapper mb-30">
 
+								<h2 class="title-small default-color mb-30">Google Map Search</h2>
 
+								<div id="google-map">
+									<div id="googleMaps" class="google-map-container"></div>
+								</div>
 
-
-
-		<!-- google map - start
-		================================================== -->
-		<section id="map-section" class="map-section clearfix">
-			<div class="address-wrapper">
-
-				<!-- address-info-topbar - start -->
-				<div class="address-info-topbar mb-30 clearfix">
-					<div class="address-info-left">
-						<h3 class="title-text">harmoni event management</h3>
-						<p class="m-0">
-							Apple Store, 112 Prince St New York,
-							NY 10012, United States 80361,
-							United States
-						</p>
+							</div>
+							<div class="spacial-event-wrapper text-center" style="background-image: url({% static 'assets/images/spacial-event-bg.jpg' %});">
+								<div class="overlay-black">
+									<p class="sub-title white-color mb-30">26 DECEMBER 2018</p>
+									<h2 class="title-large white-color mb-30">
+										AMSTERDAM
+										<strong class="yellow-color">PHP CONFERENCE</strong>
+									</h2>
+									<a href="#!" class="custom-btn">booking ticket</a>
+								</div>
+							</div>
+						</div>
 					</div>
+					<div class="col-lg-9 col-md-12 col-sm-12">
 
-					<div class="address-info-right">
-						<ul>
-							<li>
-								<button type="button">
-									<span class="icon"><i class="fas fa-street-view"></i></span>
-									<small>Direction</small>
-								</button>
-							</li>
-							<li>
-								<button type="button">
-									<span class="icon"><i class="fas fa-rss"></i></span>
-									<small>Save</small>
-								</button>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- address-info-topbar - end -->
+						<div class="search-result-form">
+							<form action="#!">
+								<ul>
 
-				<!-- address-info-bottombar - start -->
-				<div class="address-info-bottombar clearfix">
-					<div class="address-info-left">
-						<div class="rating-star">
-							<span class="rating-point">4.5</span>
-							<ul>
-								<li><i class="fas fa-star"></i></li>
-								<li><i class="fas fa-star"></i></li>
-								<li><i class="fas fa-star"></i></li>
-								<li><i class="fas fa-star"></i></li>
-								<li><i class="fas fa-star-half"></i></li>
+									<li>
+										<span class="result-text">5 Search results from 20 events</span>
+									</li>
+									<li>
+										<label for="year-select">Years:</label>
+										<select id="year-select">
+											<option selected="">2018</option>
+											<option value="1">2019</option>
+											<option value="2">2020</option>
+											<option value="3">2021</option>
+										</select>
+									</li>
+									<li>
+										<label for="munth-select">Months:</label>
+										<select id="munth-select">
+											<option selected="">June</option>
+											<option value="1">July</option>
+											<option value="2">August</option>
+										</select>
+									</li>
+
+								</ul>
+							</form>
+
+							<ul class="nav event-layout-btngroup">
+								<li><a data-toggle="tab" href="#list-style"><i class="fas fa-th-list"></i></a></li>
+								<li><a class="active" data-toggle="tab" href="#grid-style"><i class="fas fa-th"></i></a></li>
 							</ul>
 						</div>
-						<p class="m-0">105 reviews</p>
-					</div>
 
-					<div class="address-info-right">
-						<button type="button" class="map-larger-btn">
-							view larger map
-						</button>
+						<div class="tab-content">
+							<div id="list-style" class="tab-pane fade">
+								<div class="event-list-item clearfix">
+									<div class="event-image">
+										<!--<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>-->
+										<img src="{% static 'assets/images/event/event-1.jpg' %}" alt="Image_not_found">
+									</div>
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												On Road <strong>Surprise</strong>
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from 6000.00</span>
+										</div>
+										<p class="discription-text mb-30">
+											Surprise your loved ones by putting on a bigger poster or banner.
+										</p>
+										<div class="event-info-list ul-li clearfix">
+											<ul>
+												<li>
+													<a href="{% url 'details' %}" class="tickets-details-btn">
+														tickets & details
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="event-list-item clearfix">
+									<div class="event-image">
+										<!--<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>-->
+										<img src="{% static 'assets/images/event/event-2.jpg' %}" alt="Image_not_found">
+									</div>
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Birthday Blast - <strong>Fun Panrom</strong>
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from 4000.00</span>
+										</div>
+										<p class="discription-text mb-30">
+											A crackling surprise, for an awesome explosive moment of your life!.
+										</p>
+										<div class="event-info-list ul-li clearfix">
+											<ul>
+												<li>
+													<a href="{% url 'details' %}" class="tickets-details-btn">
+														tickets & details
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="pagination ul-li clearfix">
+									<ul>
+										<li class="page-item prev-item">
+											<a class="page-link" href="#!">Prev</a>
+										</li>
+										<li class="page-item"><a class="page-link" href="#!">01</a></li>
+										<li class="page-item active"><a class="page-link" href="#!">02</a></li>
+										<li class="page-item"><a class="page-link" href="#!">03</a></li>
+										<li class="page-item"><a class="page-link" href="#!">04</a></li>
+										<li class="page-item"><a class="page-link" href="#!">05</a></li>
+										<li class="page-item next-item">
+											<a class="page-link" href="#!">Next</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="grid-style" class="tab-pane fade in active show">
+								<div class="row justify-content-center">
+									<div class="col-lg-6 col-md-6 col-sm-12">
+										<div class="event-grid-item">
+											<div class="event-image">
+												<!--<div class="post-date">
+													<span class="date">26</span>
+													<small class="month">june</small>
+												</div>-->
+												<img src="{% static 'assets/images/event/1.event-grid.jpg' %}" alt="Image_not_found">
+											</div>
+											<div class="event-content">
+												<div class="event-title mb-30">
+													<h3 class="title">
+														On Road Surprise
+													</h3>
+													<span class="ticket-price yellow-color">Tickets from &#8377; 6,000.00</span>
+												</div>
+												<div class="event-post-meta ul-li-block mb-30">
+													<ul>
+														<li>
+															<span class="icon">
+																<i class="fas fa-map-marker-alt"></i>
+															</span>
+															Manhattan, New York
+														</li>
+													</ul>
+												</div>
+												<a href="{% url 'details' %}" class="tickets-details-btn">
+													tickets & details
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-12">
+										<div class="event-grid-item">
+											<div class="event-image">
+												<!--<div class="post-date">
+													<span class="date">26</span>
+													<small class="month">june</small>
+												</div>-->
+												<img src="{% static 'assets/images/event/2.event-grid.jpg' %}" alt="Image_not_found">
+											</div>
+											<div class="event-content">
+												<div class="event-title mb-30">
+													<h3 class="title">
+														Birthday Blast
+													</h3>
+													<span class="ticket-price yellow-color">Tickets from &#8377; 4,000.00</span>
+												</div>
+												<div class="event-post-meta ul-li-block mb-30">
+													<ul>
+														<li>
+															<span class="icon">
+																<i class="fas fa-map-marker-alt"></i>
+															</span>
+															Manhattan, New York
+														</li>
+													</ul>
+												</div>
+												<a href="{% url 'details' %}" class="tickets-details-btn">
+													tickets & details
+												</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="pagination ul-li clearfix">
+										<ul>
+											<li class="page-item prev-item">
+												<a class="page-link" href="#!">Prev</a>
+											</li>
+											<li class="page-item"><a class="page-link" href="#!">01</a></li>
+											<li class="page-item active"><a class="page-link" href="#!">02</a></li>
+											<li class="page-item"><a class="page-link" href="#!">03</a></li>
+											<li class="page-item"><a class="page-link" href="#!">04</a></li>
+											<li class="page-item"><a class="page-link" href="#!">05</a></li>
+											<li class="page-item next-item">
+												<a class="page-link" href="#!">Next</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- address-info-bottombar - end -->
-					
-			</div>
-			<div id="google-map">
-				<div id="googleMaps" class="google-map-container"></div>
 			</div>
 		</section>
-		<!-- google map - end
-		================================================== -->
-
-
-
-
-
-		<!-- default-footer-section - start
-		================================================== -->
 		<footer id="footer-section" class="footer-section default-footer-section clearfix">
-
-			<!-- footer-top - start -->
 			<div class="footer-top sec-ptb-100 clearfix">
 				<div class="container">
 					<div class="row">
-
-						<!-- basic-info - start -->
 						<div class="col-lg-12 col-md-12 col-md-12">
 							<div class="basic-info mb-50 clearfix">
 								<div class="row">
-
-									<!-- basic-info-item - start -->
 									<div class="col-lg-4 col-md-6 col-sm-12">
 										<div class="basic-info-item">
 											<span class="icon">
@@ -833,9 +888,6 @@
 											</div>
 										</div>
 									</div>
-									<!-- basic-info-item - end -->
-
-									<!-- basic-info-item - start -->
 									<div class="col-lg-4 col-md-6 col-sm-12">
 										<div class="basic-info-item">
 											<span class="icon">
@@ -847,9 +899,6 @@
 											</div>
 										</div>
 									</div>
-									<!-- basic-info-item - end -->
-
-									<!-- basic-info-item - start -->
 									<div class="col-lg-4 col-md-6 col-sm-12">
 										<div class="basic-info-item">
 											<span class="icon">
@@ -861,30 +910,19 @@
 											</div>
 										</div>
 									</div>
-									<!-- basic-info-item - end -->
-									
 								</div>
 							</div>
 						</div>
-						<!-- basic-info - end -->
-
-						<!-- about-wrapper - start -->
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="about-wrapper">
-
-								<!-- site-logo-wrapper - start -->
 								<div class="site-logo-wrapper mb-30">
 									<a href="index-1.html" class="logo">
 										<img src="{% static 'assets/images/1.site-logo.png' %} " alt="logo_not_found">
 									</a>
 								</div>
-								<!-- site-logo-wrapper - end -->
-
 								<p class="mb-30">
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
 								</p>
-
-								<!-- social-links - start -->
 								<div class="social-links ul-li">
 									<h3 class="social-title">network</h3>
 									<ul>
@@ -905,60 +943,40 @@
 										</li>
 									</ul>
 								</div>
-								<!-- social-links - end -->
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12">
+							<div class="usefullinks-wrapper ul-li-block">
+								<h3 class="footer-item-title">
+									useful <strong>links</strong>
+								</h3>
+								<ul>
+									<li><a href="#!">Birthday Party</a></li>
+									<li><a href="#!">Business meeting</a></li>
+									<li><a href="#!">Conference</a></li>
+									<li><a href="#!">Food Event</a></li>
+									<li><a href="#!">Musical Event</a></li>
+									<li><a href="#!">Wedding Party</a></li>
+								</ul>
 								
 							</div>
 						</div>
-						<!-- about-wrapper - end -->
-
-						<!-- usefullinks-wrapper - start -->
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="usefullinks-wrapper ul-li-block">
 								<h3 class="footer-item-title">
-									Quick<strong>links</strong>
+									useful <strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">Home</a></li>
+									<li><a href="#!">About Harmoni</a></li>
+									<li><a href="#!">Disclaimer</a></li>
 									<li><a href="#!">Contact us</a></li>
-									<li><a href="#!">About us</a></li>
-									<li><a href="#!">Franchisee</a></li>
-									<li><a href="#!">Media</a></li>
-									<li><a href="#!">Plan a Surprise</a></li>
-									<li><a href="#!">Terms & Conditios</a></li>
-									<li><a href="#!">Privacy Policy</a></li>
+									<li><a href="#!">Events Schedule</a></li>
+									<li><a href="#!">Sponsors</a></li>
+									<li><a href="#!">Venues</a></li>
 								</ul>
+								
 							</div>
 						</div>
-						<!-- usefullinks-wrapper - end -->
-
-						<!-- usefullinks-wrapper - start -->
-						<div class="col-lg-3 col-md-6 col-sm-12">
-							<div class="usefullinks-wrapper ul-li-block">
-								<h3 class="footer-item-title">
-									<strong>Surprises</strong>
-								</h3>
-								<ul>
-									<li><a href="#!">12'O Clock Surprise</a></li>
-									<li><a href="#!">car Surprise</a></li>
-									<li><a href="#!">On Road Surprise</a></li>
-									<li><a href="#!">Mascot Doll Surprise</a></li>
-									<li><a href="#!">Flash Mob</a></li>
-									<li><a href="#!">Hire a Guitarist</a></li>
-									<li><a href="#!">Mottamadi Surprise</a></li>
-									<li><a href="#!">Room Decor</a></li>
-									<li><a href="#!">Van / Bus Surprise</a></li>
-									<li><a href="#!">Yacht Surprise</a></li>
-									<li><a href="#!">Hand Crafted Gifts</a></li>
-									<li><a href="#!">Gift for Her</a></li>
-									<li><a href="#!">Gift for Him</a></li>
-									<li><a href="#!">Luxury Surprise</a></li>
-									<li><a href="#!">Big box Surprise</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- usefullinks-wrapper - end -->
-
-						<!-- instagram-wrapper - start -->
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="instagram-wrapper ul-li">
 								<h3 class="footer-item-title">
@@ -966,19 +984,19 @@
 								</h3>
 								<ul>
 									<li class="image-wrapper">
-										<img src="{% static 'assets/images/footer/instagram/img1.png' %} " alt="Image_not_found">
+										<img src="{% static 'assets/images/footer/instagram/img1.png' %}" alt="Image_not_found">
 										<a href="#!"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
-										<img src="{% static 'assets/images/footer/instagram/img2.png' %} " alt="Image_not_found">
+										<img src="{% static 'assets/images/footer/instagram/img2.png' %}" alt="Image_not_found">
 										<a href="#!"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
-										<img src="{% static 'assets/images/footer/instagram/img3.png' %} " alt="Image_not_found">
+										<img src="{% static 'assets/images/footer/instagram/img3.png' %}" alt="Image_not_found">
 										<a href="#!"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
-										<img src="{% static 'assets/images/footer/instagram/img4.png' %} " alt="Image_not_found">
+										<img src="{% static 'assets/images/footer/instagram/img4.png' %}" alt="Image_not_found">
 										<a href="#!"><i class="fab fa-instagram"></i></a>
 									</li>
 								</ul>
@@ -987,26 +1005,17 @@
 								</h4>
 							</div>
 						</div>
-						<!-- instagram-wrapper - end -->
-
 					</div>
 				</div>
 			</div>
-			<!-- footer-top - end -->
-
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-
-						<!-- copyright-text - start -->
 						<div class="col-lg-7 col-md-12 col-sm-12">
 							<div class="copyright-text">
 								<p class="m-0">©2018 <a href="#!" class="site-link">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by <a href="#!" class="author-link"><strong>jThemes Studio</strong></a></p>
 							</div>
 						</div>
-						<!-- copyright-text - end -->
-
-						<!-- footer-menu - start -->
 						<div class="col-lg-5 col-md-12 col-sm-12">
 							<div class="footer-menu">
 								<ul>
@@ -1017,50 +1026,25 @@
 								</ul>
 							</div>
 						</div>
-						<!-- footer-menu - end -->
-
 					</div>
 				</div>
 			</div>
-
 		</footer>
-		<!-- default-footer-section - end
-		================================================== -->
-		<!-- default-footer-section - end
-		================================================== -->
-		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %} "></script>
+		<script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static 'assets/js/popper.min.js' %}"></script>
 		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-
-		<!-- carousel jquery include -->
-		<script src="{% static 'assets/js/slick.min.js' %}"></script>
-		<script src=" {% static 'assets/js/owl.carousel.min.js' %}"></script>
-
-		<!-- map jquery include -->
-		<script src="{% static 'assets/js/gmap3.min.js' %} "></script>
+		<script src="{% static 'assets/js/slick.min.js' %}  "></script>
+		<script src="{% static 'assets/js/owl.carousel.min.js' %} "></script>
+		<script src="{% static 'assets/js/gmap3.min.js' %}"></script>
 		<script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
-
-		<!-- calendar jquery include -->
-		<script src="{% static 'assets/js/atc.min.js' %} "></script>
-
-		<!-- others jquery include -->
-		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %} "></script>
+		<script src="{% static 'assets/js/atc.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
 		<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
 		<script src="{% static 'assets/js/jarallax.min.js' %}"></script>
 		<script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-
-		<!-- gallery img loaded - jqury include -->
-		<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
-
-		<!-- multy count down - jqury include -->
+		<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %} "></script>
 		<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
-
-		<!-- color panal - jqury include -->
 		<script src="{% static 'assets/js/style-switcher.js' %}"></script>
-
-		<!-- custom jquery include -->
 		<script src="{% static 'assets/js/custom.js' %}"></script>
-
 	</body>
-	<!-- Mirrored from jthemes.net/themes/html/harmony-event/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Nov 2020 14:01:02 GMT -->
 </html>

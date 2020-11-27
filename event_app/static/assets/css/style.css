@@ -868,9 +868,11 @@ button {
             text-align: center;
             border-radius: 3px;
             position: relative;
-            color: #ffffff;
+            color: #ffbe30;
             font-size: 16px;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            
+          }
             .sticky-header-section .header-bottom .menu-item-list > ul > li > a:before {
               top: 0;
               left: 0;
@@ -7314,7 +7316,8 @@ button {
   .default-header-section .header-bottom .menu-item-list > ul > li > a {
     padding: 5px 12px; }
   .sticky-header-section .header-bottom .menu-item-list > ul > li > a {
-    padding: 5px 10px; }
+    padding: 5px 10px;
+  }
   .event-section .tab-content .event-item .event-content .tickets-details-btn {
     padding: 15px 30px; }
   .special-offer-section .event-makeing-btn a {
@@ -8115,3 +8118,37 @@ button {
 /* ====================================================================================================
 6 - media screen and (max-width: 320px) - end
 ==================================================================================================== */
+.dropdown-menu {
+	min-width: 200px !important;
+}
+.dropdown-menu.columns-3 {
+	min-width: 600px !important;
+}
+.dropdown-menu li a {
+	padding: 5px 15px;
+	font-weight: 300;
+}
+.multi-column-dropdown {
+	list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.multi-column-dropdown li a {
+	display: block;
+	clear: both;
+	line-height: 1.428571429;
+	color: #333;
+	white-space: normal;
+}
+.multi-column-dropdown li a:hover {
+	text-decoration: none;
+	color: #262626;
+	background-color: #999;
+}
+ 
+@media (max-width: 767px) {
+	.dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+}

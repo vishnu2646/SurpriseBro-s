@@ -6,3 +6,4 @@ class Contact(models.Model):
     counrty = models.CharField(max_length=100,blank=True, null=True)
     phone = models.IntegerField()
     message = models.TextField(blank=True, null=True)
+    
