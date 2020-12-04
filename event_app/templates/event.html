@@ -21,6 +21,18 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/style-switcher.css' %} ">
 		<link id="color_theme" rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/default.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %} ">
+		<style>
+		.header-section .site-logo-wrapper,
+		.header-altranative .logo-area {
+			padding: 15px 5px;
+			background-color: #fff;
+			box-shadow: 2px 1px 9px rgba(0,0,0,0.3);
+			border-radius: 0 0 15px 15px;
+			margin-bottom: -70px;
+			width: 100px;
+    		margin-top: 10px;
+		}
+		</style>
 	</head>
 	<body class="default-header-p">
 		<div id="thetop" class="thetop"></div>
@@ -29,7 +41,7 @@
 				<i class="fas fa-angle-double-up"></i>
 			</a>
 		</div>
-		<div id="preloader"></div>
+		<!--<div id="preloader"></div>-->
 		<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
 			<div class="header-top">
 				<div class="container">
@@ -203,14 +215,7 @@
 			<div class="header-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3">
-							<div class="site-logo-wrapper">
-								<a href="index-1.html" class="logo">
-									<img src="{% static 'assets/images/0.site-logo.png' %} " alt="logo_not_found">
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-9">
+						<div class="col-lg-10">
 							<div class="mainmenu-wrapper">
 								<div class="row">
 									<div class="col-lg-10">
@@ -222,7 +227,10 @@
 												<li>
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
-												<li class="dropdown">
+												<li>
+													<a href="{% url 'event' %}">Surprise</a>
+												</li>
+												<!--<li class="dropdown">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
 													<ul class="dropdown-menu multi-column columns-3">
 														<div class="card-body row" style="width:650px;line-height:2;">
@@ -255,7 +263,7 @@
 															</div>
 														</div>
 													</ul>
-												</li>
+												</li>-->
 												<li class="menu-item-has-children">
 													<a href="#!">Franchisee</a>
 												</li>
@@ -296,6 +304,13 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-2">
+							<div class="site-logo-wrapper">
+								<a href="index-1.html" class="logo">
+									<img src="{% static 'assets/images/logo.jpg' %}" width="100" height="100" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -304,7 +319,7 @@
 			<div class="container">
 				<div class="logo-area float-left">
 					<a href="index-1.html">
-						<img src="{% static 'assets/images/1.site-logo.png' %} " alt="logo_not_found">
+						<img src="{% static 'assets/images/logo.jpg' %}" width="100" height="100" alt="logo_not_found">
 					</a>
 				</div>
 
@@ -320,7 +335,7 @@
 
 					<div class="sidebar-header">
 						<a href="#!">
-							<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
+							<img src="{% static 'assets/images/logo.jpg' %}" width="100" height="100" alt="logo_not_found">
 						</a>
 					</div>
 					<div class="sidebar-form">
@@ -340,7 +355,6 @@
 						</ul>
 					</div>
 					<div class="menu-link-list other-pages-links">
-						<h2 class="menu-title">all single pages</h2>
 						<ul>
 							<li>
 								<a href="gallery.html">
@@ -595,8 +609,8 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="section-title">
-							<small class="sub-title">Find best event on Harmoni</small>
-							<h2 class="big-title">event <strong>Search</strong></h2>
+							<small class="sub-title">Find best event on Surprise Bro</small>
+							<h2 class="big-title">All <strong>Events</strong></h2>
 						</div>
 					</div>
 					<div class="col-lg-8 col-md-12 col-sm-12">
@@ -678,7 +692,7 @@
 									<li>
 										<span class="result-text">5 Search results from 20 events</span>
 									</li>
-									<li>
+									<!--<li>
 										<label for="year-select">Years:</label>
 										<select id="year-select">
 											<option selected="">2018</option>
@@ -694,7 +708,7 @@
 											<option value="1">July</option>
 											<option value="2">August</option>
 										</select>
-									</li>
+									</li>-->
 
 								</ul>
 							</form>
@@ -707,6 +721,7 @@
 
 						<div class="tab-content">
 							<div id="list-style" class="tab-pane fade">
+							{% for event in events %}
 								<div class="event-list-item clearfix">
 									<div class="event-image">
 										<!--<div class="post-date">
@@ -718,17 +733,17 @@
 									<div class="event-content">
 										<div class="event-title mb-15">
 											<h3 class="title">
-												On Road <strong>Surprise</strong>
+												<strong>{{ event.event_name }}</strong>
 											</h3>
-											<span class="ticket-price yellow-color">Tickets from 6000.00</span>
+											<span class="ticket-price yellow-color">Tickets from {{ event.cost }}</span>
 										</div>
 										<p class="discription-text mb-30">
-											Surprise your loved ones by putting on a bigger poster or banner.
+											{{event.description}}
 										</p>
 										<div class="event-info-list ul-li clearfix">
 											<ul>
 												<li>
-													<a href="{% url 'details' %}" class="tickets-details-btn">
+													<a href="{% url 'event-details' event.id %}" class="tickets-details-btn">
 														tickets & details
 													</a>
 												</li>
@@ -736,68 +751,43 @@
 										</div>
 									</div>
 								</div>
-								<div class="event-list-item clearfix">
-									<div class="event-image">
-										<!--<div class="post-date">
-											<span class="date">26</span>
-											<small class="month">june</small>
-										</div>-->
-										<img src="{% static 'assets/images/event/event-2.jpg' %}" alt="Image_not_found">
-									</div>
-									<div class="event-content">
-										<div class="event-title mb-15">
-											<h3 class="title">
-												Birthday Blast - <strong>Fun Panrom</strong>
-											</h3>
-											<span class="ticket-price yellow-color">Tickets from 4000.00</span>
-										</div>
-										<p class="discription-text mb-30">
-											A crackling surprise, for an awesome explosive moment of your life!.
-										</p>
-										<div class="event-info-list ul-li clearfix">
-											<ul>
-												<li>
-													<a href="{% url 'details' %}" class="tickets-details-btn">
-														tickets & details
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
+							{% endfor %}
+							{% if is_paginated %}
 								<div class="pagination ul-li clearfix">
 									<ul>
-										<li class="page-item prev-item">
-											<a class="page-link" href="#!">Prev</a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#!">01</a></li>
-										<li class="page-item active"><a class="page-link" href="#!">02</a></li>
-										<li class="page-item"><a class="page-link" href="#!">03</a></li>
-										<li class="page-item"><a class="page-link" href="#!">04</a></li>
-										<li class="page-item"><a class="page-link" href="#!">05</a></li>
-										<li class="page-item next-item">
-											<a class="page-link" href="#!">Next</a>
-										</li>
+										{% if page_obj.has_previous %}
+											<li class="page-item prev-item">
+												<a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+											</li>
+										{% endif %}
+											<li class="page-item"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+										{% if page_obj.has_next %}
+											<li class="page-item next-item">
+												<a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+											</li>
+										{% endif %}
 									</ul>
 								</div>
+							{% endif %}
 							</div>
 							<div id="grid-style" class="tab-pane fade in active show">
 								<div class="row justify-content-center">
+								{% for event in events  %}
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<div class="event-grid-item">
 											<div class="event-image">
-												<!--<div class="post-date">
+												<div class="post-date">
 													<span class="date">26</span>
 													<small class="month">june</small>
-												</div>-->
+												</div>
 												<img src="{% static 'assets/images/event/1.event-grid.jpg' %}" alt="Image_not_found">
 											</div>
 											<div class="event-content">
 												<div class="event-title mb-30">
 													<h3 class="title">
-														On Road Surprise
+														{{ event.event_name }}
 													</h3>
-													<span class="ticket-price yellow-color">Tickets from &#8377; 6,000.00</span>
+													<span class="ticket-price yellow-color">Tickets from &#8377; {{ event.cost }}</span>
 												</div>
 												<div class="event-post-meta ul-li-block mb-30">
 													<ul>
@@ -805,64 +795,34 @@
 															<span class="icon">
 																<i class="fas fa-map-marker-alt"></i>
 															</span>
-															Manhattan, New York
+															{{ event.location }}
 														</li>
 													</ul>
 												</div>
-												<a href="{% url 'details' %}" class="tickets-details-btn">
+												<a href="{% url 'event-details' event.id %}" class="tickets-details-btn">
 													tickets & details
 												</a>
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="event-grid-item">
-											<div class="event-image">
-												<!--<div class="post-date">
-													<span class="date">26</span>
-													<small class="month">june</small>
-												</div>-->
-												<img src="{% static 'assets/images/event/2.event-grid.jpg' %}" alt="Image_not_found">
-											</div>
-											<div class="event-content">
-												<div class="event-title mb-30">
-													<h3 class="title">
-														Birthday Blast
-													</h3>
-													<span class="ticket-price yellow-color">Tickets from &#8377; 4,000.00</span>
-												</div>
-												<div class="event-post-meta ul-li-block mb-30">
-													<ul>
-														<li>
-															<span class="icon">
-																<i class="fas fa-map-marker-alt"></i>
-															</span>
-															Manhattan, New York
-														</li>
-													</ul>
-												</div>
-												<a href="{% url 'details' %}" class="tickets-details-btn">
-													tickets & details
-												</a>
-											</div>
-										</div>
-									</div>
-
+								{% endfor %}
+								{% if is_paginated %}
 									<div class="pagination ul-li clearfix">
 										<ul>
-											<li class="page-item prev-item">
-												<a class="page-link" href="#!">Prev</a>
-											</li>
-											<li class="page-item"><a class="page-link" href="#!">01</a></li>
-											<li class="page-item active"><a class="page-link" href="#!">02</a></li>
-											<li class="page-item"><a class="page-link" href="#!">03</a></li>
-											<li class="page-item"><a class="page-link" href="#!">04</a></li>
-											<li class="page-item"><a class="page-link" href="#!">05</a></li>
-											<li class="page-item next-item">
-												<a class="page-link" href="#!">Next</a>
-											</li>
+											{% if page_obj.has_previous %}
+												<li class="page-item prev-item">
+													<a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+												</li>
+											{% endif %}
+												<li class="page-item"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+											{% if page_obj.has_next %}
+												<li class="page-item next-item">
+													<a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+												</li>
+											{% endif %}
 										</ul>
 									</div>
+								{% endif %}
 								</div>
 							</div>
 						</div>
@@ -917,7 +877,7 @@
 							<div class="about-wrapper">
 								<div class="site-logo-wrapper mb-30">
 									<a href="index-1.html" class="logo">
-										<img src="{% static 'assets/images/1.site-logo.png' %} " alt="logo_not_found">
+										<img src="{% static 'assets/images/logo.jpg' %} " alt="logo_not_found">
 									</a>
 								</div>
 								<p class="mb-30">
@@ -948,31 +908,41 @@
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="usefullinks-wrapper ul-li-block">
 								<h3 class="footer-item-title">
-									useful <strong>links</strong>
+									Quick <strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">Birthday Party</a></li>
-									<li><a href="#!">Business meeting</a></li>
-									<li><a href="#!">Conference</a></li>
-									<li><a href="#!">Food Event</a></li>
-									<li><a href="#!">Musical Event</a></li>
-									<li><a href="#!">Wedding Party</a></li>
+										<li><a href="#!">Home</a></li>
+										<li><a href="#!">Contact us</a></li>
+										<li><a href="#!">About us</a></li>
+										<li><a href="#!">Franchisee</a></li>
+										<li><a href="#!">Media</a></li>
+										<li><a href="#!">Plan a Surprise</a></li>
+										<li><a href="#!">Terms & Conditios</a></li>
+										<li><a href="#!">Privacy Policy</a></li>
 								</ul>
-								
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="usefullinks-wrapper ul-li-block">
 								<h3 class="footer-item-title">
-									useful <strong>links</strong>
+									Surprise <strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">About Harmoni</a></li>
-									<li><a href="#!">Disclaimer</a></li>
-									<li><a href="#!">Contact us</a></li>
-									<li><a href="#!">Events Schedule</a></li>
-									<li><a href="#!">Sponsors</a></li>
-									<li><a href="#!">Venues</a></li>
+									<li><a href="#!">12'O Clock Surprise</a></li>
+										<li><a href="#!">car Surprise</a></li>
+										<li><a href="#!">On Road Surprise</a></li>
+										<li><a href="#!">Mascot Doll Surprise</a></li>
+										<li><a href="#!">Flash Mob</a></li>
+										<li><a href="#!">Hire a Guitarist</a></li>
+										<li><a href="#!">Mottamadi Surprise</a></li>
+										<li><a href="#!">Room Decor</a></li>
+										<li><a href="#!">Van / Bus Surprise</a></li>
+										<li><a href="#!">Yacht Surprise</a></li>
+										<li><a href="#!">Hand Crafted Gifts</a></li>
+										<li><a href="#!">Gift for Her</a></li>
+										<li><a href="#!">Gift for Him</a></li>
+										<li><a href="#!">Luxury Surprise</a></li>
+										<li><a href="#!">Big box Surprise</a></li>
 								</ul>
 								
 							</div>

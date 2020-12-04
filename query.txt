@@ -1,6 +1,6 @@
-from django.db import models
-from django.shortcuts import reverse
-# Create your models here.
+EVENT_CATEGORY = (
+    ('Love','Love_Event')
+)
 
 class Contact(models.Model):
     name = models.CharField(max_length=100,blank=True, null=True)
@@ -17,12 +17,8 @@ class Event(models.Model):
     note = models.CharField(max_length=100,blank=True, null=True)
     points = models.TextField()
     description = models.TextField()
-    category = models.CharField(max_length=100,blank=True, null=True)
+    category = models.CharField(choise=EVENT_CATEGORY,max_length=25)
     dispatched = models.IntegerField()
-    photo = models.ImageField(blank=True, null=True)
 
     def __str__(self):
-        return self.event_name
-
-    def get_absolute_url(self):
-        return reverse("details", kwargs={"pk": self.pk})
+        return self.event_name,self.location,self.cost

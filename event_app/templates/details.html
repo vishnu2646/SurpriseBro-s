@@ -22,6 +22,18 @@
 		<link id="color_theme" rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/default.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %} ">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<style>
+		.header-section .site-logo-wrapper,
+		.header-altranative .logo-area {
+			padding: 15px 5px;
+			background-color: #fff;
+			box-shadow: 2px 1px 9px rgba(0,0,0,0.3);
+			border-radius: 0 0 15px 15px;
+			margin-bottom: -70px;
+			width: 100px;
+    		margin-top: 10px;
+		}
+		</style>
 	</head>
 	<body class="default-header-p">
 		<div id="thetop" class="thetop"></div>
@@ -30,7 +42,7 @@
 				<i class="fas fa-angle-double-up"></i>
 			</a>
 		</div>
-		<div id="preloader"></div>
+		<!--<div id="preloader"></div>-->
 			<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
 				<div class="header-top">
 					<div class="container">
@@ -193,21 +205,14 @@
 				<div class="header-bottom">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-3">
-								<div class="site-logo-wrapper">
-									<a href="index-1.html" class="logo">
-										<img src="{% static 'assets/images/0.site-logo.png' %} " alt="logo_not_found">
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-9">
+							<div class="col-lg-10">
 								<div class="mainmenu-wrapper">
 									<div class="row">
 										<div class="col-lg-10">
 											<div class="menu-item-list ul-li clearfix">
 												<ul>
 													<li class="menu-item-has-children">
-														<a href="#!">home</a>
+														<a href="{% url 'home' %}">home</a>
 														<ul class="sub-menu">
 															<!--<li class="menu-item-has-children">
 																<a href='index-1.html'>home v.1</a>
@@ -262,9 +267,12 @@
 														</ul>
 													</li>
 													<li>
-														<a href="gallery.html">gallery</a>
+														<a href="{% url 'gallery' %}">gallery</a>
 													</li>
-													<li class="dropdown">
+													<li>
+														<a href="{% url 'event' %}">Surprise</a>
+													</li>
+													<!--<li class="dropdown">
 														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
 														<ul class="dropdown-menu multi-column columns-3">
 															<div class="card-body row" style="width:650px;line-height:2;">
@@ -297,7 +305,7 @@
 																</div>
 															</div>
 														</ul>
-													</li>
+													</li>-->
 													<li class="menu-item-has-children">
 														<a href="#!">Franchisee</a>
 													</li>
@@ -339,6 +347,13 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-2">
+							<div class="site-logo-wrapper">
+								<a href="index-1.html" class="logo">
+									<img src="{% static 'assets/images/logo.jpg' %}" height="100" width="100" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</header>
@@ -346,7 +361,7 @@
 				<div class="container">
 					<div class="logo-area float-left">
 						<a href="index-1.html">
-							<img src="{% static 'assets/images/1.site-logo.png' %} " alt="logo_not_found">
+							<img src="{% static 'assets/images/logo.jpg' %}" width="100" height="100" alt="logo_not_found">
 						</a>
 					</div>
 
@@ -362,7 +377,7 @@
 
 						<div class="sidebar-header">
 							<a href="#!">
-								<img src="{% static 'assets/images/2.site-logo.png' %} " alt="logo_not_found">
+								<img src="{% static 'assets/images/logo.jpg' %}" width="100" height="100" alt="logo_not_found">
 							</a>
 						</div>
 						<div class="sidebar-form">
@@ -372,7 +387,6 @@
 							</form>
 						</div>
 						<div class="menu-link-list main-pages-links">
-							<h2 class="menu-title">all home pages</h2>
 							<ul>
 								<li>
 									<a href="index-1.html">
@@ -383,7 +397,6 @@
 							</ul>
 						</div>
 						<div class="menu-link-list other-pages-links">
-							<h2 class="menu-title">all single pages</h2>
 							<ul>
 								<li>
 									<a href="about.html">
@@ -411,8 +424,8 @@
 								</li>
 							</ul>
 						</div>
-						<div class="menu-link-list inner-pages-links">
-							<!--<h2 class="menu-title">all inner pages</h2>
+						<!--<div class="menu-link-list inner-pages-links">
+							<h2 class="menu-title">all inner pages</h2>
 							<ul>
 								<li>
 									<a href="booking.html">
@@ -444,8 +457,8 @@
 										404 error
 									</a>
 								</li>
-							</ul>-->
-						</div>
+							</ul>
+						</div>-->
 						<div class="login-btn-group">
 							<!--<ul>
 								<li>
@@ -660,7 +673,7 @@
 										<i class="fas fa-bookmark"></i>
 										Featured Event
 									</span>
-									<h2 class="event-title"><strong>On Road Surprise</strong></h2>
+									<h2 class="event-title"><strong>{{ object.event_name }}</strong></h2>
 								</div>
 								<div id="event-details-carousel" class="event-details-carousel owl-carousel owl-theme">
 									<div class="item">
@@ -691,24 +704,23 @@
 											</span>
 											<div class="event-content">
 												<small class="event-title">Category</small>
-												<h3 class="event-date">Love</h3>
+												<h3 class="event-date">{{ event.category }}</h3>
 											</div>
 										</li>
 									</ul>
 								</div>
 								<p class="black-color mb-30">
-									Surprise your loved ones by putting on a bigger poster or banner. 
+									{{ object.description }} 
 								</p>
 								<h4>Points--</h4>
 								<ul>
-									<li>The size of the banner is 12×2 ft</li>
-									<li>Mail us a high resolution picture and the message </li>
+									<li>{{ object.points }}</li>
 								</ul>
 								<p class="black-color m-0">
 									Please ping us for more details. 
 								</p>
 								<br>
-								<h3>Note: Product will be dispatched with in 5 working days.</h3>
+								<h3>Note: Product will be dispatched with in {{ object.dispatched }} working days.</h3>
 							</div>
 							<div class="reviewer-comment-wrapper mb-30 clearfix">
 								<div class="section-title text-left mb-50">
@@ -758,21 +770,6 @@
 								</div>
 							</div>
 
-							<div class="pagination ul-li clearfix mb-80">
-								<ul>
-									<li class="page-item prev-item">
-										<a class="page-link" href="#">Prev</a>
-									</li>
-									<li class="page-item"><a class="page-link" href="#">01</a></li>
-									<li class="page-item active"><a class="page-link" href="#">02</a></li>
-									<li class="page-item"><a class="page-link" href="#">03</a></li>
-									<li class="page-item"><a class="page-link" href="#">04</a></li>
-									<li class="page-item"><a class="page-link" href="#">05</a></li>
-									<li class="page-item next-item">
-										<a class="page-link" href="#">Next</a>
-									</li>
-								</ul>
-							</div>
 							<div class="comment-form clearfix">
 
 								<div class="section-title text-left mb-50">
@@ -956,7 +953,7 @@
 								<div class="about-wrapper">
 									<div class="site-logo-wrapper mb-30">
 										<a href="index-1.html" class="logo">
-											<img src="{% static 'assets/images/1.site-logo.png' %} " alt="logo_not_found">
+											<img src="{% static 'assets/images/logo.jpg' %}" alt="logo_not_found">
 										</a>
 									</div>
 									<p class="mb-30">
