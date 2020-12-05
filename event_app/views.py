@@ -51,3 +51,6 @@ class ContactView(View):
         contact.save()
         return redirect("contact")
         return render(request,self.template_name)
+
+def about(request):
+    return render(request,'about.html')

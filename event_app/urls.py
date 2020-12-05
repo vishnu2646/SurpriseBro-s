@@ -14,5 +14,6 @@ urlpatterns = [
     path('details/<int:pk>/',views.EventDetailView.as_view(),name="event-details"),
     path('event/',views.EventListView.as_view(),name="event"),
     path('booking/',views.booking,name="booking"),
+    path('about/',views.about,name="about"),
     path('404/',views.error,name="404-error"),
 ]
