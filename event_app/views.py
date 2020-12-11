@@ -1,12 +1,29 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.views.generic import View,ListView,DetailView
+
 # Create your views here.
+'''
 def index(request):
-    return render(request,'index.html')
+    events = Event.objects.all()[:4]
+    context = {
+        'events': events
+    }
+    return render(request,'index.html',context)
+'''
+
+class IndexView(ListView):
+    model = Event
+    template_name = 'index.html'
+    context_object_name = 'events'
+    paginate_by = 8
+
 
 def gallery(request):
-    return render(request,'gallery.html')
+    context = {
+        "events":Event.objects.all()
+    } 
+    return render(request,'gallery.html',context)
 
 def about(request):
     return render(request,'about.html')
@@ -19,7 +36,7 @@ class EventListView(ListView):
     template_name = 'event.html'
     context_object_name = 'events'
     paginate_by = 4
-    queryset = Event.objects.order_by('-event_name')[:6]
+    queryset = Event.objects.order_by('-event_name')
 
 class EventDetailView(DetailView):
     model = Event
@@ -28,8 +45,11 @@ class EventDetailView(DetailView):
 def error(request):
     return render(request,'404-error.html')
 
-def booking(request):
-    return render(request,'booking.html')
+def franchise(request):
+    context = {
+        "events":Event.objects.all()
+    }
+    return render(request,'franchise.html',context)
 
 def test(request):
     return render(request,'test.html')
@@ -39,7 +59,10 @@ class ContactView(View):
     raise_exception = True
     permission_denied_message = 'You must Login Now.'
     def get(self,request):
-        return render(request,self.template_name)
+        context = {
+            "events":Event.objects.all()
+        }
+        return render(request,self.template_name,context)
     def post(self,request):
         data = request.POST
         contact = Contact()
@@ -53,4 +76,13 @@ class ContactView(View):
         return render(request,self.template_name)
 
 def about(request):
-    return render(request,'about.html')
+    context = {
+        "events":Event.objects.all()
+    }
+    return render(request,'about.html',context)
+
+def refund(request):
+    return render(request,'refund.html')
+
+def search(request):
+    return render(request,'event.html')

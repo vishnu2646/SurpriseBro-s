@@ -5,8 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-		<title>Surprise Machi</title>
+		<title>Surprise Bro</title>
 		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %}">
@@ -43,13 +42,8 @@
 				<i class="fas fa-angle-double-up"></i>
 			</a>
 		</div>
-
-		<!-- preloader - start
-		<div id="preloader"></div>-->
-		<!-- preloader - end -->
+		<div id="preloader"></div>
 		<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
-
-			<!-- header-top - start -->
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
@@ -59,13 +53,13 @@
 									<li>
 										<a href="#!">
 											<i class="fas fa-envelope"></i>
-											info@harmoni.com
+											surprisebros@gmail.com
 										</a>
 									</li>
 									<li>
 										<a href="#!">
 											<i class="fas fa-phone"></i>
-											100-2222-9999
+											+91 99401 98102
 										</a>
 									</li>
 								</ul>
@@ -239,45 +233,25 @@
 												<li class="menu-item-has-children">
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
-												<li>
+												<!--<li>
 													<a href="{% url 'event' %}">Surprise</a>
-												</li>
-												<!--<li class="dropdown">
+												</li>-->
+												<li class="dropdown">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
 													<ul class="dropdown-menu multi-column columns-3">
-														<div class="card-body row" style="width:650px;line-height:2;">
+														<div class="card-body row" style="width:950px;line-height:3;">
+														{% for event in events %}
 															<div class="col-lg-4">
 																<ul class="multi-column-dropdown">
-																	<li><a href="#">12'o Clock Surprise</a></li>
-																	<li><a href="#">Car Surprise</a></li>
-																	<li><a href="#">On Road Surprise</a></li>
-																	<li><a href="#">Mascot Doll Surprise</a></li>
-																	<li><a href="#">Flash Mob</a></li>
+																	<li><a href="{% url 'event-details' event.id %}" style="color:black"><b>{{ event.event_name }}</b></a></li>
 																</ul>
 															</div>
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown">
-																	<li><a href="#">Hire a Guitarist</a></li>
-																	<li><a href="#">Mottamadi Surprise</a></li>
-																	<li><a href="#">Room Decor</a></li>
-																	<li><a href="#">Van/Bus Surprise</a></li>
-																	<li><a href="#">Yacht Surprise</a></li>
-																</ul>
-															</div>
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown">
-																	<li><a href="#">HAnd Craft Gifts</a></li>
-																	<li><a href="#">Gift for Her</a></li>
-																	<li><a href="#">Gift for Him</a></li>
-																	<li><a href="#">Luxury Surprise</a></li>
-																	<li><a href="#">Big Box Surprise</a></li>
-																</ul>
-															</div>
+														{% endfor %}
 														</div>
 													</ul>
-												</li>-->
+												</li>
 												<li class="menu-item-has-children">
-													<a href="#!">Franchisee</a>
+													<a href="{% url 'franchise' %}">Franchisee</a>
 												</li>
 												<li class="menu-item-has-children">
 													<a href="{% url 'contact' %}">contact us</a>
@@ -360,7 +334,7 @@
 						<h2 class="menu-title">all home pages</h2>
 						<ul>
 							<li>
-								<a href="index-1.html">
+								<a href="{% url 'home' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Home
 								</a>
@@ -376,13 +350,13 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{% url 'event' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Surprises
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{% url 'franchise' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Franchisee
 								</a>
@@ -600,6 +574,25 @@
 				</div>
 			</div>
 		</section>
+		<section id="about-section" class="about-section sec-ptb-100 clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h3 class="text-center">Theni Franchise Details</h3>
+						<p>Address:65 B/C,33w Muthuramalingam Street, karuvelnaykkan Patti,Theni Dt ,625531.</p>
+						<p>Mbl no:8778730348</p>
+						<p>Mail I'd: thenisurprisebros@gmail.com</p>
+						<p>FB: surprise bro's theni</p>
+						<p>Insta: surprise_bros_theni</p>
+					</div>
+					<div class="col-lg-6">
+						<h3 class="text-center">Coimbatore Franchise Details</h3>
+						<p>Mbl no:7904415327</p>
+						<p>Mail I'd: surprisebroscoimbatore@gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section id="contact-section" class="contact-section sec-ptb-100 clearfix">
 			<div class="container">
 				<div class="section-title mb-50">
@@ -627,7 +620,7 @@
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-item">
-									<input type="tel" placeholder="Phone Number" name="phone" required>
+									<input type="text" placeholder="Phone Number" name="phone" required>
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12 col-sm-12">
@@ -643,7 +636,7 @@
 			<div class="address-wrapper">
 				<div class="address-info-topbar mb-30 clearfix">
 					<div class="address-info-left">
-						<h3 class="title-text">harmoni event management</h3>
+						<h3 class="title-text">Surprise Bro's event management</h3>
 						<p class="m-0">
 							Apple Store, 112 Prince St New York,
 							NY 10012, United States 80361,
@@ -707,8 +700,8 @@
 												<i class="fas fa-map-marker-alt"></i>
 											</span>
 											<div class="info-content">
-												<p>100 highland ave,</p>
-												<h3>california, united state</h3>
+												<p>Head office Location</p>
+												<h3>Tirunelveli,Tamil Nadu,India</h3>
 											</div>
 										</div>
 									</div>
@@ -718,8 +711,8 @@
 												<i class="fas fa-envelope"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">contact@pantero.com</a></p>
-												<h3><a href="#!">info@harmoni.com</a></h3>
+												<p><a href="#!">shanthanuvip@gmail.com</a></p>
+												<h3><a href="#!">surprisebros@gmail.com</a></h3>
 											</div>
 										</div>
 									</div>
@@ -729,8 +722,8 @@
 												<i class="fas fa-phone"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">100 800 1234 5555</a></p>
-												<h3><a href="#!">100 800 1234 5555</a></h3>
+												<p><a href="#!">+91 99401 98102</a></p>
+												<h3><a href="#!">+91 99401 98102</a></h3>
 											</div>
 										</div>
 									</div>
@@ -776,11 +769,11 @@
 									Quick<strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">Home</a></li>
-									<li><a href="#!">Contact us</a></li>
-									<li><a href="#!">About us</a></li>
-									<li><a href="#!">Franchisee</a></li>
-									<li><a href="#!">Media</a></li>
+									<li><a href="{% url 'home' %}">Home</a></li>
+									<li><a href="{% url 'contact' %}">Contact us</a></li>
+									<li><a href="{% url 'about' %}">About us</a></li>
+									<li><a href="{% url 'franchise' %}">Franchisee</a></li>
+									<li><a href="{% url 'gallery' %}">Media</a></li>
 									<li><a href="#!">Plan a Surprise</a></li>
 									<li><a href="#!">Terms & Conditios</a></li>
 									<li><a href="#!">Privacy Policy</a></li>
@@ -814,28 +807,28 @@
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="instagram-wrapper ul-li">
 								<h3 class="footer-item-title">
-									harmoni <strong>instagram</strong>
+									Surprise Bro's <strong>instagram</strong>
 								</h3>
 								<ul>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img1.png' %} " alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img2.png' %} " alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img3.png' %} " alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img4.png' %} " alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 								</ul>
 								<h4 class="followus-link">
-									Follow Our Instagram <a href="#!">#Harmoni</a>
+									Follow Our Instagram <a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj">#Surprise Bro's</a>
 								</h4>
 							</div>
 						</div>
@@ -848,7 +841,7 @@
 					<div class="row">
 						<div class="col-lg-7 col-md-12 col-sm-12">
 							<div class="copyright-text">
-								<p class="m-0">©2018 <a href="#!" class="site-link">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by <a href="#!" class="author-link"><strong>jThemes Studio</strong></a></p>
+								<p class="text-muted">©2020 <a href="#!" class="site-link">Surprise Bro's</a> <i class="fas fa-heart ml-5"></i> <a href="#!" class="author-link">Designed and developed by <strong>Friendzion Techonologies</strong></a></p>
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">

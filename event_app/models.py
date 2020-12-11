@@ -15,11 +15,11 @@ class Event(models.Model):
     location = models.CharField(max_length=100,blank=True, null=True)
     avaliblity = models.CharField(max_length=100,blank=True, null=True)
     note = models.CharField(max_length=100,blank=True, null=True)
-    points = models.TextField()
+    points = models.TextField(blank=True, null=True)
     description = models.TextField()
     category = models.CharField(max_length=100,blank=True, null=True)
     dispatched = models.IntegerField()
-    photo = models.ImageField(blank=True, null=True)
+    image = models.ImageField(blank=True,null=True)
 
     def __str__(self):
         return self.event_name

@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>SurpriceMachi</title>
+		<title>Surprice Bro</title>
 		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %} ">
@@ -41,7 +41,7 @@
 				<i class="fas fa-angle-double-up"></i>
 			</a>
 		</div>
-		<!--<div id="preloader"></div>-->
+		<div id="preloader"></div>
 		<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
 			<div class="header-top">
 				<div class="container">
@@ -52,13 +52,13 @@
 									<li>
 										<a href="#!">
 											<i class="fas fa-envelope"></i>
-											info@harmoni.com
+											surprisebros@gmail.com
 										</a>
 									</li>
 									<li>
 										<a href="#!">
 											<i class="fas fa-phone"></i>
-											100-2222-9999
+											+91 99401 98102
 										</a>
 									</li>
 								</ul>
@@ -227,45 +227,22 @@
 												<li>
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
-												<li>
-													<a href="{% url 'event' %}">Surprise</a>
-												</li>
-												<!--<li class="dropdown">
+												<li class="dropdown">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
 													<ul class="dropdown-menu multi-column columns-3">
-														<div class="card-body row" style="width:650px;line-height:2;">
+														<div class="card-body row" style="width:950px;line-height:3;">
+														{% for event in events %}
 															<div class="col-lg-4">
 																<ul class="multi-column-dropdown">
-																	<li><a href="#">12'o Clock Surprise</a></li>
-																	<li><a href="#">Car Surprise</a></li>
-																	<li><a href="#">On Road Surprise</a></li>
-																	<li><a href="#">Mascot Doll Surprise</a></li>
-																	<li><a href="#">Flash Mob</a></li>
+																	<li><a href="{% url 'event-details' event.id %}" style="color:black"><b>{{ event.event_name }}</b></a></li>
 																</ul>
 															</div>
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown">
-																	<li><a href="#">Hire a Guitarist</a></li>
-																	<li><a href="#">Mottamadi Surprise</a></li>
-																	<li><a href="#">Room Decor</a></li>
-																	<li><a href="#">Van/Bus Surprise</a></li>
-																	<li><a href="#">Yacht Surprise</a></li>
-																</ul>
-															</div>
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown">
-																	<li><a href="#">HAnd Craft Gifts</a></li>
-																	<li><a href="#">Gift for Her</a></li>
-																	<li><a href="#">Gift for Him</a></li>
-																	<li><a href="#">Luxury Surprise</a></li>
-																	<li><a href="#">Big Box Surprise</a></li>
-																</ul>
-															</div>
+														{% endfor %}
 														</div>
 													</ul>
-												</li>-->
+												</li>
 												<li class="menu-item-has-children">
-													<a href="#!">Franchisee</a>
+													<a href="{% url 'franchise' %}">Franchisee</a>
 												</li>
 												<li class="menu-item-has-children">
 													<a href="{% url 'contact' %}">contact us</a>
@@ -347,7 +324,7 @@
 					<div class="menu-link-list main-pages-links">
 						<ul>
 							<li>
-								<a href="index-1.html">
+								<a href="{% url 'home' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Home
 								</a>
@@ -357,25 +334,25 @@
 					<div class="menu-link-list other-pages-links">
 						<ul>
 							<li>
-								<a href="gallery.html">
+								<a href="{% url 'gallery' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									our gallery
 								</a>
 							</li>
 							<li>
-								<a href="contact.html">
+								<a href="{% url 'franchise' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Franchise
 								</a>
 							</li>
 							<li>
-								<a href="contact.html">
+								<a href="{% url 'event' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Surprise
 								</a>
 							</li>
 							<li>
-								<a href="contact.html">
+								<a href="{% url 'contact' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									contact us
 								</a>
@@ -721,14 +698,14 @@
 
 						<div class="tab-content">
 							<div id="list-style" class="tab-pane fade">
-							{% for event in events %}
+								{% for event in events %}
 								<div class="event-list-item clearfix">
 									<div class="event-image">
 										<!--<div class="post-date">
 											<span class="date">26</span>
 											<small class="month">june</small>
 										</div>-->
-										<img src="{% static 'assets/images/event/event-1.jpg' %}" alt="Image_not_found">
+										<img src="{{event.image.url}}" alt="Image_not_found">
 									</div>
 									<div class="event-content">
 										<div class="event-title mb-15">
@@ -772,15 +749,15 @@
 							</div>
 							<div id="grid-style" class="tab-pane fade in active show">
 								<div class="row justify-content-center">
-								{% for event in events  %}
+									{% for event in events  %}
 									<div class="col-lg-6 col-md-6 col-sm-12">
 										<div class="event-grid-item">
 											<div class="event-image">
-												<div class="post-date">
+												<!--<div class="post-date">
 													<span class="date">26</span>
 													<small class="month">june</small>
-												</div>
-												<img src="{% static 'assets/images/event/1.event-grid.jpg' %}" alt="Image_not_found">
+												</div>-->
+												<img src="{{ event.image.url }}" alt="Image_not_found">
 											</div>
 											<div class="event-content">
 												<div class="event-title mb-30">
@@ -805,8 +782,8 @@
 											</div>
 										</div>
 									</div>
-								{% endfor %}
-								{% if is_paginated %}
+									{% endfor %}
+									{% if is_paginated %}
 									<div class="pagination ul-li clearfix">
 										<ul>
 											{% if page_obj.has_previous %}
@@ -822,7 +799,7 @@
 											{% endif %}
 										</ul>
 									</div>
-								{% endif %}
+									{% endif %}
 								</div>
 							</div>
 						</div>
@@ -843,8 +820,8 @@
 												<i class="fas fa-map-marker-alt"></i>
 											</span>
 											<div class="info-content">
-												<p>100 highland ave,</p>
-												<h3>california, united state</h3>
+												<p>Head office Location</p>
+												<h3>Tirunelveli,Tamil Nadu,India</h3>
 											</div>
 										</div>
 									</div>
@@ -854,8 +831,8 @@
 												<i class="fas fa-envelope"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">contact@pantero.com</a></p>
-												<h3><a href="#!">info@harmoni.com</a></h3>
+												<p><a href="#!">shanthanuvip@gmail.com</a></p>
+												<h3><a href="#!">surprisebros@gmail.com</a></h3>
 											</div>
 										</div>
 									</div>
@@ -865,8 +842,8 @@
 												<i class="fas fa-phone"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">100 800 1234 5555</a></p>
-												<h3><a href="#!">100 800 1234 5555</a></h3>
+												<p><a href="#!">+91 99401 98102</a></p>
+												<h3><a href="#!">+91 99401 98102</a></h3>
 											</div>
 										</div>
 									</div>
@@ -911,11 +888,11 @@
 									Quick <strong>links</strong>
 								</h3>
 								<ul>
-										<li><a href="#!">Home</a></li>
-										<li><a href="#!">Contact us</a></li>
-										<li><a href="#!">About us</a></li>
-										<li><a href="#!">Franchisee</a></li>
-										<li><a href="#!">Media</a></li>
+										<li><a href="{% url 'home' %}">Home</a></li>
+										<li><a href="{% url 'contact' %}">Contact us</a></li>
+										<li><a href="{% url 'about' %}">About us</a></li>
+										<li><a href="{% url 'franchise' %}">Franchisee</a></li>
+										<li><a href="{% url 'gallery' %}">Media</a></li>
 										<li><a href="#!">Plan a Surprise</a></li>
 										<li><a href="#!">Terms & Conditios</a></li>
 										<li><a href="#!">Privacy Policy</a></li>
@@ -929,20 +906,20 @@
 								</h3>
 								<ul>
 									<li><a href="#!">12'O Clock Surprise</a></li>
-										<li><a href="#!">car Surprise</a></li>
-										<li><a href="#!">On Road Surprise</a></li>
-										<li><a href="#!">Mascot Doll Surprise</a></li>
-										<li><a href="#!">Flash Mob</a></li>
-										<li><a href="#!">Hire a Guitarist</a></li>
-										<li><a href="#!">Mottamadi Surprise</a></li>
-										<li><a href="#!">Room Decor</a></li>
-										<li><a href="#!">Van / Bus Surprise</a></li>
-										<li><a href="#!">Yacht Surprise</a></li>
-										<li><a href="#!">Hand Crafted Gifts</a></li>
-										<li><a href="#!">Gift for Her</a></li>
-										<li><a href="#!">Gift for Him</a></li>
-										<li><a href="#!">Luxury Surprise</a></li>
-										<li><a href="#!">Big box Surprise</a></li>
+									<li><a href="#!">car Surprise</a></li>
+									<li><a href="#!">On Road Surprise</a></li>
+									<li><a href="#!">Mascot Doll Surprise</a></li>
+									<li><a href="#!">Flash Mob</a></li>
+									<li><a href="#!">Hire a Guitarist</a></li>
+									<li><a href="#!">Mottamadi Surprise</a></li>
+									<li><a href="#!">Room Decor</a></li>
+									<li><a href="#!">Van / Bus Surprise</a></li>
+									<li><a href="#!">Yacht Surprise</a></li>
+									<li><a href="#!">Hand Crafted Gifts</a></li>
+									<li><a href="#!">Gift for Her</a></li>
+									<li><a href="#!">Gift for Him</a></li>
+									<li><a href="#!">Luxury Surprise</a></li>
+									<li><a href="#!">Big box Surprise</a></li>
 								</ul>
 								
 							</div>
@@ -950,28 +927,28 @@
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="instagram-wrapper ul-li">
 								<h3 class="footer-item-title">
-									harmoni <strong>instagram</strong>
+									Surprise Bro's <strong>instagram</strong>
 								</h3>
 								<ul>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img1.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img2.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img3.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img4.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 								</ul>
 								<h4 class="followus-link">
-									Follow Our Instagram <a href="#!">#Harmoni</a>
+									Follow Our Instagram <a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj">#Surprise Bro's</a>
 								</h4>
 							</div>
 						</div>
@@ -983,7 +960,7 @@
 					<div class="row">
 						<div class="col-lg-7 col-md-12 col-sm-12">
 							<div class="copyright-text">
-								<p class="m-0">©2018 <a href="#!" class="site-link">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by <a href="#!" class="author-link"><strong>jThemes Studio</strong></a></p>
+								<p class="text-muted">©2020 <a href="#!" class="site-link">Surprise Bro's</a> <i class="fas fa-heart ml-5"></i> <a href="#!" class="author-link">Designed and developed by <strong>Friendzion Techonologies</strong></a></p>
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">

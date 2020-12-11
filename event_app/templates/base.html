@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Surprise Machi</title>
+		<title>Surprise Bro</title>
 		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %}">
@@ -57,45 +57,25 @@
 												<li>
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
-												<li>
+												<!--<li>
 													<a href="{% url 'event' %}">Surprise</a>
-												</li>
-												<!--<li class="dropdown">
+												</li>-->
+												<li class="dropdown">
 													<a href="{% url 'event' %}" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
 													<ul class="dropdown-menu multi-column columns-3">
-														<div class="card-body row" style="width:650px;line-height:2;">
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown" style="background-color: #333333;">
-																	<li><a href="#" style="color:#ffbe30">12'o Clock Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Car Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">On Road Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Mascot Doll Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Flash Mob</a></li>
-																</ul>
-															</div>
+														<div class="card-body row" style="width:750px;line-height:2;height:200px;">
+														{% for event in events %}
 															<div class="col-lg-4">
 																<ul class="multi-column-dropdown">
-																	<li><a href="#" style="color:#ffbe30">Hire a Guitarist</a></li>
-																	<li><a href="#" style="color:#ffbe30">Mottamadi Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Room Decor</a></li>
-																	<li><a href="#" style="color:#ffbe30">Van/Bus Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Yacht Surprise</a></li>
+																	<li><a href="{% url 'event-details' event.id %}" style="color:black"><b>{{ event.event_name }}</b></a></li>
 																</ul>
 															</div>
-															<div class="col-lg-4">
-																<ul class="multi-column-dropdown">
-																	<li><a href="#" style="color:#ffbe30">HAnd Craft Gifts</a></li>
-																	<li><a href="#" style="color:#ffbe30">Gift for Her</a></li>
-																	<li><a href="#" style="color:#ffbe30">Gift for Him</a></li>
-																	<li><a href="#" style="color:#ffbe30">Luxury Surprise</a></li>
-																	<li><a href="#" style="color:#ffbe30">Big Box Surprise</a></li>
-																</ul>
-															</div>
+														{% endfor %}
 														</div>
-													</ul>-->
+													</ul>
 												</li>
 												<li>
-													<a href="{% url 'gallery' %}">franchise</a>
+													<a href="{% url 'franchise' %}">franchise</a>
 												</li>
 												<!--<li class="menu-item-has-children">
 													<a href="{% url 'about' %}">About</a>
@@ -245,7 +225,7 @@
 					<div class="menu-link-list main-pages-links">
 						<ul>
 							<li>
-								<a href="index-1.html">
+								<a href="{% url 'home' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Home
 								</a>
@@ -261,13 +241,13 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{% url 'franchise' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Franchise
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="{% url 'event' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Surprises
 								</a>
@@ -432,11 +412,11 @@
 						<div class="mb-15">
 							<h3 class="contact-info">
 								<i class="fas fa-phone"></i>
-								100-2222-9999
+								+91 99401 98102
 							</h3>
 							<h3 class="contact-info">
 								<i class="fas fa-envelope"></i>
-								info@harmoni.com
+								surprisebros@gmail.com
 							</h3>
 						</div>
 						<ul>

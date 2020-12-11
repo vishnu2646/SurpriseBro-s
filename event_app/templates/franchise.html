@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Harmoni - Booking Event</title>
+		<title>Surprice Bro</title>
 		<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %} ">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome-all.css' %} ">
@@ -21,6 +21,18 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/style-switcher.css' %}">
 		<link id="color_theme" rel="stylesheet" type="text/css" href="{% static 'assets/css/colors/default.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+		<style>
+		.header-section .site-logo-wrapper,
+		.header-altranative .logo-area {
+			padding: 15px 5px;
+			background-color: #fff;
+			box-shadow: 2px 1px 9px rgba(0,0,0,0.3);
+			border-radius: 0 0 15px 15px;
+			margin-bottom: -70px;
+			width: 100px;
+    		margin-top: 10px;
+		}
+		</style>
 	</head>
 	<body class="default-header-p">
 		<div id="thetop" class="thetop"></div>
@@ -40,13 +52,13 @@
 									<li>
 										<a href="#!">
 											<i class="fas fa-envelope"></i>
-											info@harmoni.com
+											surprisebros@gmail.com
 										</a>
 									</li>
 									<li>
 										<a href="#!">
 											<i class="fas fa-phone"></i>
-											100-2222-9999
+											+91 99401 98102
 										</a>
 									</li>
 								</ul>
@@ -192,21 +204,14 @@
 			<div class="header-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3">
-							<div class="site-logo-wrapper">
-								<a href="index-1.html" class="logo">
-									<img src="{% static 'assets/images/0.site-logo.png' %}" alt="logo_not_found">
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-9">
+						<div class="col-lg-10">
 							<div class="mainmenu-wrapper">
 								<div class="row">
 									<div class="col-lg-10">
 										<div class="menu-item-list ul-li clearfix">
 											<ul>
 												<li class="menu-item-has-children">
-													<a href="#!">home</a>
+													<a href="{% url 'home' %}">home</a>
 													<!--<ul class="sub-menu">
 														<li class="menu-item-has-children">
 															<a href='index-1.html'>home v.1</a>
@@ -261,7 +266,24 @@
 													</ul>-->
 												</li>
 												<li>
-													<a href="gallery.html">gallery</a>
+													<a href="{% url 'gallery' %}">gallery</a>
+												</li>
+												<li class="dropdown">
+													<a href="{% url 'event' %}" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
+													<ul class="dropdown-menu multi-column columns-3">
+														<div class="card-body row" style="width:750px;line-height:2;">
+														{% for event in events %}
+															<div class="col-lg-4">
+																<ul class="multi-column-dropdown">
+																	<li><a href="{% url 'event-details' event.id %}" style="color:black"><b>{{ event.event_name }}</b></a></li>
+																</ul>
+															</div>
+														{% endfor %}
+														</div>
+													</ul>
+												</li>
+												<!--<li>
+													<a href="{% url 'event' %}">Surprise</a>
 												</li>
 												<li class="dropdown">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
@@ -296,9 +318,9 @@
 															</div>
 														</div>
 													</ul>
-												</li>
+												</li>-->
 												<li class="menu-item-has-children">
-													<a href="#!">Franchisee</a>
+													<a href="{% url 'franchise' %}">Franchisee</a>
 												</li>
 												<li>
 													<a href="{% url 'contact' %}">contact us</a>
@@ -337,6 +359,13 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-lg-2">
+							<div class="site-logo-wrapper">
+								<a href="index-1.html" class="logo">
+									<img src="{% static 'assets/images/logo.jpg' %}" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -345,7 +374,7 @@
 			<div class="container">
 				<div class="logo-area float-left">
 					<a href="index-1.html">
-						<img src="{% static 'assets/images/1.site-logo.png' %}" alt="logo_not_found">
+						<img src="{% static 'assets/images/logo.jpg' %}" alt="logo_not_found">
 					</a>
 				</div>
 
@@ -361,7 +390,7 @@
 
 					<div class="sidebar-header">
 						<a href="#!">
-							<img src="{% static 'assets/images/2.site-logo.png' %}" alt="logo_not_found">
+							<img src="{% static 'assets/images/logo.jpg' %}" width="200" height="200" alt="logo_not_found">
 						</a>
 					</div>
 					<div class="sidebar-form">
@@ -383,25 +412,25 @@
 					<div class="menu-link-list other-pages-links">
 						<ul>
 							<li>
-								<a href="about.html">
+								<a href="{% url 'gallery' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									our gallery
 								</a>
 							</li>
 							<li>
-								<a href="about.html">
+								<a href="{% url 'event' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Surprise
 								</a>
 							</li>
 							<li>
-								<a href="about.html">
+								<a href="{% url 'franchise' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									Franchise
 								</a>
 							</li>
 							<li>
-								<a href="contact.html">
+								<a href="{% url 'contact' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									contact us
 								</a>
@@ -615,13 +644,13 @@
 						<div class="row justify-content-center">
 							<div class="col-lg-6 col-md-12 col-sm-12">
 								<div class="breadcrumb-title text-center mb-50">
-									<span class="sub-title">ticket booking</span>
-									<h2 class="big-title">harmoni <strong>booking</strong></h2>
+									<span class="sub-title">TURN YOUR PASSION INTO A BUSINESS YOU LOVE</span>
+									<h2 class="big-title">SURPRISE BRO’s <strong>FRANCHISE</strong></h2>
 								</div>
 								<div class="breadcrumb-list">
 									<ul>
 										<li class="breadcrumb-item"><a href="index-1.html" class="breadcrumb-link">Home</a></li>
-										<li class="breadcrumb-item active" aria-current="page">booking</li>
+										<li class="breadcrumb-item active" aria-current="page">Franchise</li>
 									</ul>
 								</div>
 							</div>
@@ -632,286 +661,85 @@
 		</section>
 		<section id="booking-timeout-section" class="booking-timeout-section clearfix">
 			<div class="container">
+				<h3 class="text-center"><b>SURPRISE BRO’s FRANCHISE</b></h3>
+				<p>The  franchise is simple and easy, even for first time entrepreneurs.
+				With the brand establishing ; The SurpriseBro’s franchise can be set up with minimum advertising and marketing costs, 
+				zero hassles of identifying locations. We have always stood for women entrepreneurship and we are proud to have promoted over 3+ women who were earlier homemakers, 
+				into successful entrepreneurs and SurpriseBro’s franchisees.</p>
+				<p>We understand that continual training is key to this business, and have established the Surprise Bro’s Training Academy in Chennai, 
+				which offers multiple Diploma courses to upgrade the skills of our technicians.</p>
+			</div>
+			<br>
+			<div class="container">
+				<h3 class="text-center text-dark"><b>BENEFITS OF ASSOCIATING WITH SURPRISE BRO’s</b></h3>
+				<br>
 				<div class="row">
-					<div class="col-lg-7 col-md-12 col-sm-12">
-						<div class="leftside-wrapper">
-							<h3>Please complete registration <strong class="yellow-color">within 12:00 hours.</strong></h3>
-							<p class="m-0">After 12:00 hours, the reservation we’re holding will be released to others.</p>
-						</div>
+					<div class="col-md-6">
+						<h3 class="text-muted"><b>REDUCED COST OF INVESTMENT</b></h3>
+						<p>Get in touch with us to know about the lower cost of investments (compared to industry standards)</p>
+						<h3 class="text-muted"><b>SPECIAL TRAINING OFFERED</b></h3>
+						<p>Special training offered to the franchisees , technicians  from our industry experts who are well-equipped in Balloon Decoration , 
+							Stage Decoration , and other technical works </p>
 					</div>
-					<div class="col-lg-5 col-md-12 col-sm-12">
-						<div class="rightside-wrapper">
-
-							<div class="clock-wrapper">
-								<ul class="countdown-list" data-countdown="2019/01/01"></ul>
-							</div>
-							
-						</div>
+					<div class="col-md-6">
+						<h3 class="text-muted"><b>PROVEN HIGHER RETURN OF INVESTMENT</b></h3>
+						<p>Starting a franchise with Surprise Bro’s presents an opportunity to increase your investment in a systematic and steady manner.</p>
+						<h3 class="text-muted"><b>BRAND VALUE</b></h3>
+						<p>Surprise Bro’s has grown from 1 location  to 6 franchisees by building their brand over the past 1 year.
+						Now we are inviting you to be part of this success story. </p>
+						<h3 class="text-muted"><b>DON'T WORRY ABOUT FURTHER MARKETING !</b></h3>
+						<p>Our core team will take care of that.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section id="booking-section" class="booking-section bg-gray-light sec-ptb-100 clearfix">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-md-12 col-sm-12">
-						<div class="booking-content-wrapper">
-							<div class="order-summary mb-50">
-								<div class="section-title mb-30">
-									<h2 class="big-title">order <strong>summary</strong></h2>
-								</div>
-								<div class="order-summary-table table-responsive">
-
-									<table class="table text-center">
-										<thead>
-											<tr>
-												<th scope="col">ticket type</th>
-												<th scope="col">price</th>
-												<th scope="col">fee</th>
-												<th scope="col">quantity</th>
-												<th scope="col">subtotal</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="bg-gray-light">
-												<th scope="row">Harmoni Package 1</th>
-												<td>$120.00</td>
-												<td>$5.00</td>
-												<td><input type="text" value="5"></td>
-												<td>$675.00</td>
-											</tr>
-											<tr>
-												<th scope="row">Harmoni Package 2</th>
-												<td>$120.00</td>
-												<td>$5.00</td>
-												<td><input type="text" value="5"></td>
-												<td>$675.00</td>
-											</tr>
-											<tr class="tfooter">
-												<th colspan="4" class="text-left">order total</th>
-												<td>$2,575.00</td>
-											</tr>
-										</tbody>
-									</table>
-
-								</div>
-							</div>
-							<div class="reg-info mb-50">
-								<div class="section-title mb-30">
-									<h2 class="big-title">registration <strong>information</strong></h2>
-								</div>
+				<div class="booking-content-wrapper">
+					<div class="reg-info mb-50">
+						<div class="section-title mb-30">
+							<h2 class="big-title">FILL THIS FORM AND WE WILL INVITE YOU <strong>TO BE A PART OF SURPRISE BRO’s</strong></h2>
+						</div>
+						<div class="ticket-buying-form form-wrapper">
+							<form action="#">
 								<div class="row">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="ticket-buying-form form-wrapper">
-											<h3 class="form-title">ticket buyer</h3>
-
-											<form action="#">
-												<div class="form-item">
-													<input type="text" placeholder="First Name">
-												</div>
-												<div class="form-item">
-													<input type="text" placeholder="Last Name">
-												</div>
-												<div class="form-item">
-													<input type="email" placeholder="Email Address">
-												</div>
-												<div class="form-item">
-													<input type="email" placeholder="Confirm Email Address">
-												</div>
-											</form>
-
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="payment-form form-wrapper">
-											<h3 class="form-title">payment</h3>
-											<form action="#">
-												<div class="form-item">
-													<select class="cradit-card-select">
-														<option selected="">Select Credit Card</option>
-														<option>option 1</option>
-														<option>option 2</option>
-														<option>option 3</option>
-														<option>option 4</option>
-														<option>option 5</option>
-													</select>
-												</div>
-												<div class="form-item">
-													<input type="text" placeholder="Card Numbers">
-												</div>
-												<div class="expired-date-form">
-													<h3 class="title-text">expired date</h3>
-													<ul>
-														<li>
-															<div class="form-item">
-																<select class="month-select">
-																	<option selected="">Month</option>
-																	<option>option 1</option>
-																	<option>option 2</option>
-																	<option>option 3</option>
-																	<option>option 4</option>
-																	<option>option 5</option>
-																</select>
-															</div>
-														</li>
-														<li>
-															<div class="form-item">
-																<select class="year-select">
-																	<option selected="">Year</option>
-																	<option>option 1</option>
-																	<option>option 2</option>
-																	<option>option 3</option>
-																	<option>option 4</option>
-																	<option>option 5</option>
-																</select>
-															</div>
-														</li>
-														<li>
-															<div class="form-item">
-																<input type="text" placeholder="CSC">
-															</div>
-														</li>
-													</ul>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="billing-info mb-50">
-								<div class="section-title mb-30">
-									<h2 class="big-title">billing <strong>information</strong></h2>
-								</div>
-								<div class="billing-form form-wrapper">
-									<form action="#">
+									<div class="col-md-4">
 										<div class="form-item">
-											<select class="country-select">
-												<option selected="">Select Country</option>
-												<option>option 1</option>
-												<option>option 2</option>
-												<option>option 3</option>
-												<option>option 4</option>
-												<option>option 5</option>
+											<input type="text" placeholder="Name">
+										</div>
+										<div class="form-item">
+											<input type="text" placeholder="Phone Number">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-item">
+											<input type="email" placeholder="Email Address">
+										</div>
+										<div class="form-item">
+											<select class="form-item" id="exampleFormControlSelect1" style="border-color:rgb(240,240,240)">
+												<option selected>Choose...</option>
+												<option>Chennai</option>
+												<option>Coimbatore</option>
+												<option>Hosur</option>
+												<option>Theni</option>
+												<option>Madurai</option>
 											</select>
 										</div>
+									</div>
+									<div class="col-md-4">
 										<div class="form-item">
-											<input type="text" placeholder="Address">
+											<input type="email" placeholder="Investment Range">
 										</div>
 										<div class="form-item">
-											<input type="text" placeholder="Altranative Address">
+											<input type="email" placeholder="Prefered Location">
 										</div>
-										<div class="form-item-group mb-50">
-											<ul>
-												<li>
-													<div class="form-item">
-														<input type="text" placeholder="City">
-													</div>
-												</li>
-												<li>
-													<div class="form-item">
-														<select class="country-select">
-															<option selected="">States</option>
-															<option>option 1</option>
-															<option>option 2</option>
-															<option>option 3</option>
-															<option>option 4</option>
-															<option>option 5</option>
-														</select>
-													</div>
-												</li>
-												<li>
-													<div class="form-item">
-														<input type="text" placeholder="Zip Code">
-													</div>
-												</li>
-											</ul>
-										</div>
-										<div class="text-center">
-											<button type="submit" class="custom-btn">
-												pay now
-											</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="sidebar-section">
-							<div class="section-title mb-30">
-								<h2 class="big-title">ticket <strong>info</strong></h2>
-							</div>
-							<div class="location-wrapper bg-white">
-
-								<div class="title-wrapper">
-									<small class="up-arrow-icon">
-										<i class="fas fa-chevron-circle-up"></i>
-									</small>
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									<div class="title-content">
-										<small>event location</small>
-										<h3>vanila hotel</h3>
+									</div>
+									<div class="form-item">
+										<textarea type="email" placeholder="Your Message" style="background-color:white"></textarea>
 									</div>
 								</div>
-								<div class="location-info-list ul-li-block clearfix">
-									<span class="area-name">Istanbul Turkey</span>
-									<ul>
-										<li><i class="fas fa-arrow-circle-right"></i> Bayezid II Mosque and Beyazid Square</li>
-										<li><i class="fas fa-arrow-circle-right"></i> Istanbul, IS 240012</li>
-										<li><i class="fas fa-arrow-circle-right"></i> Thursday, December 26, 2018</li>
-										<li><i class="fas fa-arrow-circle-right"></i> From <strong>15.00 PM</strong> to <strong>20.00 PM</strong> (EST)</li>
-									</ul>
-								</div>
-								<div class="button">
-									<a href="#!" class="custom-btn">ADD TO MY CALENDAR</a>
-								</div>
-								<div class="title-wrapper">
-									<small class="up-arrow-icon">
-										<i class="fas fa-chevron-circle-up"></i>
-									</small>
-									<span class="icon">
-										<i class="fas fa-link"></i>
-									</span>
-									<div class="title-content">
-										<small>contact information</small>
-										<h3>harmoni staff</h3>
-									</div>
-								</div>
-								<div class="contact-links ul-li-block clearfix">
-									<p class="black-color mb-30">
-										Fusce pellentesque velvitae tincidunt egestas. Pellentesque habitant. Proin gravida nibh vel velit auctor aliquet. sollicitudin, lorem quis more...
-									</p>
-									<ul>
-										<li>
-											<a href="#!" target="_blank">
-												<span class="icon">
-													<i class="fab fa-facebook-f"></i>
-												</span>
-												facebook.com/harmoni
-											</a>
-										</li>
-										<li>
-											<a href="#!" target="_blank">
-												<span class="icon">
-													<i class="fab fa-twitter"></i>
-												</span>
-												twitter.com@harmoni
-											</a>
-										</li>
-										<li>
-											<a href="#!" target="_blank">
-												<span class="icon">
-													<i class="fas fa-link"></i>
-												</span>
-												http://www.harmoni.com
-											</a>
-										</li>
-									</ul>
-									<a href="#!" class="custom-btn">CONTACT US NOW</a>
-								</div>
-							</div>
+								<button type="submit" class="custom-btn">submit</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -930,8 +758,8 @@
 												<i class="fas fa-map-marker-alt"></i>
 											</span>
 											<div class="info-content">
-												<p>100 highland ave,</p>
-												<h3>california, united state</h3>
+												<p>Head office Location</p>
+												<h3>Tirunelveli,Tamil Nadu,India</h3>
 											</div>
 										</div>
 									</div>
@@ -941,8 +769,8 @@
 												<i class="fas fa-envelope"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">contact@pantero.com</a></p>
-												<h3><a href="#!">info@harmoni.com</a></h3>
+												<p><a href="#!">shanthanuvip@gmail.com</a></p>
+												<h3><a href="#!">surprisebros@gmail.com</a></h3>
 											</div>
 										</div>
 									</div>
@@ -952,8 +780,8 @@
 												<i class="fas fa-phone"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">100 800 1234 5555</a></p>
-												<h3><a href="#!">100 800 1234 5555</a></h3>
+												<p><a href="#!">+91 99401 98102</a></p>
+												<h3><a href="#!">+91 99401 98102</a></h3>
 											</div>
 										</div>
 									</div>
@@ -998,11 +826,11 @@
 									Quick <strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">Home</a></li>
-									<li><a href="#!">Contact us</a></li>
-									<li><a href="#!">About us</a></li>
-									<li><a href="#!">Franchisee</a></li>
-									<li><a href="#!">Media</a></li>
+									<li><a href="{% url 'home' %}">Home</a></li>
+									<li><a href="{% url 'contact' %}">Contact us</a></li>
+									<li><a href="{% url 'about' %}">About us</a></li>
+									<li><a href="{% url 'franchise' %}">Franchisee</a></li>
+									<li><a href="{% url 'gallery' %}">Media</a></li>
 									<li><a href="#!">Plan a Surprise</a></li>
 									<li><a href="#!">Terms & Conditios</a></li>
 									<li><a href="#!">Privacy Policy</a></li>
@@ -1036,28 +864,28 @@
 						<div class="col-lg-3 col-md-6 col-sm-12">
 							<div class="instagram-wrapper ul-li">
 								<h3 class="footer-item-title">
-									harmoni <strong>instagram</strong>
+									Surprise Bro’s <strong>instagram</strong>
 								</h3>
 								<ul>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img1.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img2.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img3.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img4.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 								</ul>
 								<h4 class="followus-link">
-									Follow Our Instagram <a href="#!">#Harmoni</a>
+									Follow Our Instagram <a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj">#Surprise Bro's</a>
 								</h4>
 							</div>
 						</div>
@@ -1069,7 +897,7 @@
 					<div class="row">
 						<div class="col-lg-7 col-md-12 col-sm-12">
 							<div class="copyright-text">
-								<p class="m-0">©2018 <a href="#!" class="site-link">Harmoni.com</a> all right reserved, made with <i class="fas fa-heart"></i> by <a href="#!" class="author-link"><strong>jThemes Studio</strong></a></p>
+								<p class="text-muted">©2020 <a href="#!" class="site-link">Surprise Bro’s</a> <i class="fas fa-heart ml-5"></i> <a href="#!" class="author-link">Designed and developed by <strong>Friendzion Techonologies</strong></a></p>
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">

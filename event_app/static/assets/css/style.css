@@ -8137,12 +8137,11 @@ button {
 	display: block;
 	clear: both;
 	line-height: 1.428571429;
-	color: #333;
 	white-space: normal;
 }
 .multi-column-dropdown li a:hover {
 	text-decoration: none;
-	color: #262626;
+	color: white;
 	background-color: #999;
 }
  
@@ -8152,4 +8151,3 @@ button {
 		overflow-x: hidden;
 	}
 }
-

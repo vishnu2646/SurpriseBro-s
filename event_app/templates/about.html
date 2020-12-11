@@ -52,13 +52,13 @@
 									<li>
 										<a href="#!">
 											<i class="fas fa-envelope"></i>
-											info@harmoni.com
+											surprisebros@gmail.com
 										</a>
 									</li>
 									<li>
 										<a href="#!">
 											<i class="fas fa-phone"></i>
-											100-2222-9999
+											+91 99401 98102
 										</a>
 									</li>
 								</ul>
@@ -229,11 +229,25 @@
 												<li>
 													<a href="{% url 'gallery' %}">gallery</a>
 												</li>
-												<li>
+												<!--<li>
 													<a href="{% url 'event' %}">Surprise</a>
+												</li>-->
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Surprises<b class="caret"></b></a>
+													<ul class="dropdown-menu multi-column columns-3">
+														<div class="card-body row" style="width:950px;line-height:3;">
+														{% for event in events %}
+															<div class="col-lg-4">
+																<ul class="multi-column-dropdown">
+																	<li><a href="{% url 'event-details' event.id %}" style="color:black"><b>{{ event.event_name }}</b></a></li>
+																</ul>
+															</div>
+														{% endfor %}
+														</div>
+													</ul>
 												</li>
 												<li>
-													<a href="#">Franchies</a>
+													<a href="{% url 'franchise' %}">Franchies</a>
 												</li>
 												<li class="menu-item-has-children">
 													<a href="{% url 'contact' %}">contact</a>
@@ -313,100 +327,44 @@
 						</form>
 					</div>
 					<div class="menu-link-list main-pages-links">
-						<h2 class="menu-title">all home pages</h2>
 						<ul>
 							<li>
-								<a href="index-1.html">
+								<a href="{% url 'home' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									Home V.1
-								</a>
-							</li>
-							<li>
-								<a href="index-2.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home V.2
-								</a>
-							</li>
-							<li>
-								<a href="index-3.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home v.3
-								</a>
-							</li>
-							<li>
-								<a href="index-4.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Home v.4
+									Home
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div class="menu-link-list other-pages-links">
-						<h2 class="menu-title">all single pages</h2>
 						<ul>
 							<li class="active">
-								<a href="about.html">
+								<a href="{% url 'gallery' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									About Us
+									gallery
 								</a>
 							</li>
 							<li>
-								<a href="service.html">
+								<a href="{% url 'event' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									our Services
+									Surprise
 								</a>
 							</li>
 							<li>
-								<a href="event-1.html">
+								<a href="{% url 'franchise' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
-									event list
+									Franchies
 								</a>
 							</li>
 							<li>
-								<a href="event-2.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event grid
-								</a>
-							</li>
-							<li>
-								<a href="event-1-without-sidebar.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									list without sidebar
-								</a>
-							</li>
-							<li>
-								<a href="event-2-without-sidebar.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									grid without sidebar
-								</a>
-							</li>
-							<li>
-								<a href="blog.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									Latest blogs
-								</a>
-							</li>
-							<li>
-								<a href="gallery.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									our gallery
-								</a>
-							</li>
-							<li>
-								<a href="speaker.html">
-									<span class="icon"><i class="fas fa-home"></i></span>
-									event speakers
-								</a>
-							</li>
-							<li>
-								<a href="contact.html">
+								<a href="{% url 'contact' %}">
 									<span class="icon"><i class="fas fa-home"></i></span>
 									contact us
 								</a>
 							</li>
 						</ul>
 					</div>
-					<div class="menu-link-list inner-pages-links">
+					<!--<div class="menu-link-list inner-pages-links">
 						<h2 class="menu-title">all inner pages</h2>
 						<ul>
 							<li>
@@ -586,7 +544,7 @@
 							</li>
 							
 						</ul>
-					</div>
+					</div>-->
 					<div class="social-links">
 						<h2 class="menu-title">get in touch</h2>
 						<div class="mb-15">
@@ -776,7 +734,7 @@
 						<div class="section-title mb-50 sr-fade1">
 							<span class="line-style"></span>
 							<small class="sub-title">why choose us</small>
-							<h2 class="big-title">Surprise Bro <strong>Advantages</strong></h2>
+							<h2 class="big-title">Surprise <strong>Bro's</strong></h2>
 						</div>
 					</div>
 
@@ -1206,7 +1164,7 @@
 					</div>
 					<div class="col-lg-3">
 						<div class="event-makeing-btn">
-							<a href="#!">join with us now</a>
+							<a href="{% url 'contact' %}">join with us now</a>
 						</div>
 					</div>
 
@@ -1283,8 +1241,8 @@
 												<i class="fas fa-map-marker-alt"></i>
 											</span>
 											<div class="info-content">
-												<p>100 highland ave,</p>
-												<h3>california, united state</h3>
+												<p>Head office Location</p>
+												<h3>Tirunelveli,Tamil Nadu,India</h3>
 											</div>
 										</div>
 									</div>
@@ -1294,8 +1252,8 @@
 												<i class="fas fa-envelope"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">contact@pantero.com</a></p>
-												<h3><a href="#!">info@harmoni.com</a></h3>
+												<p><a href="#!">shanthanuvip@gmail.com</a></p>
+												<h3><a href="#!">surprisebros@gmail.com</a></h3>
 											</div>
 										</div>
 									</div>
@@ -1305,8 +1263,8 @@
 												<i class="fas fa-phone"></i>
 											</span>
 											<div class="info-content">
-												<p><a href="#!">100 800 1234 5555</a></p>
-												<h3><a href="#!">100 800 1234 5555</a></h3>
+												<p><a href="#!">+91 99401 98102</a></p>
+												<h3><a href="#!">+91 99401 98102</a></h3>
 											</div>
 										</div>
 									</div>
@@ -1353,11 +1311,11 @@
 									Quick<strong>links</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">Home</a></li>
-									<li><a href="#!">Contact us</a></li>
-									<li><a href="#!">About us</a></li>
-									<li><a href="#!">Franchisee</a></li>
-									<li><a href="#!">Media</a></li>
+									<li><a href="{% url 'home' %}">Home</a></li>
+									<li><a href="{% url 'contact' %}">Contact us</a></li>
+									<li><a href="{% url 'about' %}">About us</a></li>
+									<li><a href="{% url 'franchise' %}">Franchisee</a></li>
+									<li><a href="{% url 'gallery' %}">Media</a></li>
 									<li><a href="#!">Plan a Surprise</a></li>
 									<li><a href="#!">Terms & Conditios</a></li>
 									<li><a href="#!">Privacy Policy</a></li>
@@ -1397,23 +1355,23 @@
 								<ul>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img1.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img2.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img3.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 									<li class="image-wrapper">
 										<img src="{% static 'assets/images/footer/instagram/img4.png' %}" alt="Image_not_found">
-										<a href="#!"><i class="fab fa-instagram"></i></a>
+										<a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj"><i class="fab fa-instagram"></i></a>
 									</li>
 								</ul>
 								<h4 class="followus-link">
-									Follow Our Instagram <a href="#!">#Surprise Bro</a>
+									Follow Our Instagram <a href="https://instagram.com/surprise_bros?igshid=ro64iu6aaehj">#Surprise Bro</a>
 								</h4>
 							</div>
 						</div>
@@ -1427,7 +1385,7 @@
 					<div class="row">
 						<div class="col-lg-7 col-md-12 col-sm-12">
 							<div class="copyright-text">
-								<p class="m-0">©2018 <a href="#!" class="site-link">Surprise Bro.com</a> all right reserved, made with <i class="fas fa-heart"></i> by <a href="#!" class="author-link"><strong>jThemes Studio</strong></a></p>
+								<p class="text-muted">©2020 <a href="#!" class="site-link">Surprise Bro's</a> <i class="fas fa-heart ml-5"></i> <a href="#!" class="author-link">Designed and developed by <strong>Friendzion Techonologies</strong></a></p>
 							</div>
 						</div>
 						<div class="col-lg-5 col-md-12 col-sm-12">
