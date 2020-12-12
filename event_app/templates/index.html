@@ -44,11 +44,11 @@
 											
 										</form>
 									</div>
-									<button type="submit" class="submit-btn" style="background-color:#ffbe30;color:white;text-decoration:none;padding:10px;border-radius:20px;">register now</button>
+									<button type="submit" class="submit-btn" style="background-color:#ffbe30;color:white;text-decoration:none;padding:10px;border-radius:20px;">book now</button>
 								</div>
 							</div>
 							<!-- reg-form - end -->
-							<!-- slider-content - start -->
+							<!-- slider-content - start 
 							<div class="col-lg-8 col-md-12 col-sm-12">
 								<div class="slider-content">
 									<div class="countdown-timer mb-50">
@@ -61,7 +61,7 @@
 									<strong class="bold-text">PHP CONFERENCE</strong>
 									<a href="#!" class="details-btn">event details</a>
 								</div>
-							</div>
+							</div>-->
 							<!-- slider-content - end -->							
 						</div>
 					</div>
@@ -104,15 +104,6 @@
 													<option value="3">Option 3</option>
 												</select>
 											</div>
-
-											<div class="form-item">
-												<select class="quantity-select">
-													<option selected="">Ticket Quantity</option>
-													<option value="1">Option 1</option>
-													<option value="2">Option 2</option>
-													<option value="3">Option 3</option>
-												</select>
-											</div>
 											
 										</form>
 									</div>
@@ -120,7 +111,7 @@
 								</div>
 							</div>
 							<!-- reg-form - end -->
-							<!-- slider-content - start -->
+							<!-- slider-content - start
 							<div class="col-lg-8 col-md-12 col-sm-12">
 								<div class="slider-content">
 									<div class="countdown-timer mb-50">
@@ -133,7 +124,7 @@
 									<strong class="bold-text">PHP CONFERENCE</strong>
 									<a href="#!" class="details-btn">event details</a>
 								</div>
-							</div>
+							</div>-->
 							<!-- slider-content - end -->
 						</div>
 					</div>
@@ -168,21 +159,13 @@
 													<option value="3">Option 3</option>
 												</select>
 											</div>
-											<div class="form-item">
-												<select class="quantity-select">
-													<option selected="">Ticket Quantity</option>
-													<option value="1">Option 1</option>
-													<option value="2">Option 2</option>
-													<option value="3">Option 3</option>
-												</select>
-											</div>
 										</form>
 									</div>
 									<button type="submit" class="submit-btn">register now</button>
 								</div>
 							</div>
 							<div class="col-lg-8 col-md-12 col-sm-12">
-								<div class="slider-content">
+								<!--<div class="slider-content">
 									<div class="countdown-timer mb-50">
 										<ul class="countdown-list" data-countdown="2020/08/08"></ul>
 									</div>
@@ -192,7 +175,7 @@
 									</h1>
 									<strong class="bold-text">PHP CONFERENCE</strong>
 									<a href="#!" class="details-btn">event details</a>
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>
@@ -205,7 +188,7 @@
 					<div class="col-lg-7 col-md-12 col-sm-12">
 						<div class="event-item">
 							<div class="event-image">
-								<img src="{% static 'assets/images/event/2.jpg' %}" alt="Image_not_found">
+								<img src="{% static 'assets/images/selebrityfeel.jpeg' %}" alt="Image_not_found">
 								<a href="#!" class="plus-effect"></a>
 							</div>
 							<div class="event-content">
@@ -485,7 +468,7 @@
 
 							<div class="expertise-content">
 								<h3 class="title">{{ event.event_name }}</h3>
-								<p>Start from <strong>{{ event.cost }}</strong></p>
+								<p><strong>* Happy Surprising *</strong></p>
 								<a href="{% url 'event-details' event.id  %}" class="link-btn">
 									<i class="fas fa-arrow-circle-right"></i>
 								</a>
@@ -862,26 +845,27 @@
 		</section>
 		<div id="default-sponsor-section" class="default-sponsor-section bg-gray-light clearfix">
 			<div class="container">
-				<ul>
-
-					<li>
-						<a href="#!">
-							<img src="{% static 'assets/images/partners/image1.png' %} " alt="Image_not_found">
+				<h3 class="text-center"><strong>Customized Cakes </strong> nu poturunga </h3>
+				<br>
+				<ul class="grid zoom-gallery clearfix mb-80">
+					<li class="grid-item grid-item--height2 photo-gallery " data-category="photo-gallery">
+						<a class="popup-link" href="{% static 'assets/images/sp1.jpeg' %}">
+							<img src="{% static 'assets/images/sp1.jpeg' %}" alt="Image_not_found">
 						</a>
 					</li>
-					<li>
-						<a href="#!">
-							<img src="{% static 'assets/images/partners/image2.png' %} " alt="Image_not_found">
+					<li class="grid-item grid-item--height1 photo-gallery " data-category="photo-gallery">
+						<a class="popup-link" href="{% static 'assets/images/sp2.jpeg' %}">
+							<img src="{% static 'assets/images/sp2.jpeg' %}" alt="Image_not_found">
 						</a>
 					</li>
-					<li>
-						<a href="#!">
-							<img src="{% static 'assets/images/partners/image4.png' %} " alt="Image_not_found">
+					<li class="grid-item grid-item--height2 photo-gallery " data-category="photo-gallery">
+						<a class="popup-link" href="{% static 'assets/images/sp3.jpeg' %}">
+							<img src="{% static 'assets/images/sp3.jpeg' %}" alt="Image_not_found">
 						</a>
 					</li>
-					<li>
-						<a href="#!">
-							<img src="{% static 'assets/images/partners/image6.png' %} " alt="Image_not_found">
+					<li class="grid-item grid-item--height2 photo-gallery " data-category="photo-gallery">
+						<a class="popup-link" href="{% static 'assets/images/sp4.jpeg' %}">
+							<img src="{% static 'assets/images/sp4.jpeg' %}" alt="Image_not_found">
 						</a>
 					</li>
 
