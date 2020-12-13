@@ -35,10 +35,9 @@
 
 											<div class="form-item">
 												<select class="package-select">
-													<option selected="">Choose Package</option>
-													<option value="1">Option 1</option>
-													<option value="2">Option 2</option>
-													<option value="3">Option 3</option>
+													{% for event in events %}
+														<option value="1">{{event.event_name}}</option>
+													{% endfor %}
 												</select>
 											</div>
 											
@@ -98,10 +97,9 @@
 
 											<div class="form-item">
 												<select class="package-select">
-													<option selected="">Choose Package</option>
-													<option value="1">Option 1</option>
-													<option value="2">Option 2</option>
-													<option value="3">Option 3</option>
+													{% for event in events %}
+														<option value="1">{{event.event_name}}</option>
+													{% endfor %}
 												</select>
 											</div>
 											
@@ -153,10 +151,9 @@
 											</div>
 											<div class="form-item">
 												<select class="package-select">
-													<option selected="">Choose Package</option>
-													<option value="1">Option 1</option>
-													<option value="2">Option 2</option>
-													<option value="3">Option 3</option>
+													{% for event in events %}
+														<option value="1">{{event.event_name}}</option>
+													{% endfor %}
 												</select>
 											</div>
 										</form>
@@ -274,10 +271,10 @@
 											<i class="flaticon-two-balloons"></i>
 										</span>
 										<strong class="title">
-											perfact venues
+											perfect venues
 										</strong>
 										<small class="sub-title">
-											perfact venues
+											perfect venues
 										</small>
 									</a>
 								</li>
@@ -524,7 +521,7 @@
 														<span class="work-experienc yellow-color"><strong>15 Years</strong> experienced</span>
 													</div>
 													<p class="black-color mb-30">
-														Lorem ipsum dollor site amet the best  consectuer adipiscing elites sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam...
+														5+ year experience in Events industry. Have done 500+ events all over Tamilnadu and specialized in Surprise Events.
 													</p>
 													<div class="speaker-social-network ul-li">
 														<h3 class="title title-medium mb-15">
@@ -619,7 +616,7 @@
 									</div>
 								</div>-->
 							</div>
-							<div class="slider-nav">
+							<div class="slider-nav mt-5">
 								<div class="item">
 									<div class="item-content">
 										<span class="speaker-thumbnail">
