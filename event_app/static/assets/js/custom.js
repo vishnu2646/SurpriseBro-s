@@ -637,7 +637,7 @@
     if ( typeof google == 'undefined' ) return;
     var options = {
       zoom: 14,
-      center: [40.725062,-74.0012177],
+      center: [8.73375949127244, 77.71961811074246],
       styles: [
       {elementType: 'geometry', stylers: [{color: '#e0dad2'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}]},
@@ -736,7 +736,7 @@
         options: options
       },
       marker: {
-        latLng: [40.725062,-74.0012177],
+        latLng: [8.73375949127244, 77.71961811074246],
         options: { icon: 'assets/images/map-mark.png' }
       }
     });

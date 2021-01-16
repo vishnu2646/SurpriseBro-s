@@ -30,10 +30,6 @@
 											</div>
 
 											<div class="form-item">
-												<input type="date">
-											</div>
-
-											<div class="form-item">
 												<select class="package-select">
 													{% for event in events %}
 														<option value="1">{{event.event_name}}</option>
@@ -883,7 +879,8 @@
 				</div>
 			</div>
 			<div id="google-map">
-				<div id="googleMaps" class="google-map-container"></div>
+				<div id="googleMaps" ></div>
+				<!--<iframe width="781" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cafetoit&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="google-map-container"></iframe>-->
 			</div>
 		</section>
 		<footer id="footer-section" class="footer-section footer-section3 clearfix">

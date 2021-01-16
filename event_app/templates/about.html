@@ -1218,21 +1218,9 @@
 									<strong>Surprises</strong>
 								</h3>
 								<ul>
-									<li><a href="#!">12'O Clock Surprise</a></li>
-									<li><a href="#!">car Surprise</a></li>
-									<li><a href="#!">On Road Surprise</a></li>
-									<li><a href="#!">Mascot Doll Surprise</a></li>
-									<li><a href="#!">Flash Mob</a></li>
-									<li><a href="#!">Hire a Guitarist</a></li>
-									<li><a href="#!">Mottamadi Surprise</a></li>
-									<li><a href="#!">Room Decor</a></li>
-									<li><a href="#!">Van / Bus Surprise</a></li>
-									<li><a href="#!">Yacht Surprise</a></li>
-									<li><a href="#!">Hand Crafted Gifts</a></li>
-									<li><a href="#!">Gift for Her</a></li>
-									<li><a href="#!">Gift for Him</a></li>
-									<li><a href="#!">Luxury Surprise</a></li>
-									<li><a href="#!">Big box Surprise</a></li>
+									{% for event in events %}
+										<li><a href="{% url 'event-details' event.id %}">{{event.event_name}}</a></li>
+									{% endfor %}
 								</ul>
 								
 							</div>
